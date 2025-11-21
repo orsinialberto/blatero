@@ -1,11 +1,10 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 
-import { TagFilter } from "@/components/TagFilter";
-import { TravelCard } from "@/components/TravelCard";
+import { TravelsListClient } from "@/components/TravelsListClient";
 import {
   getAllTags,
   getAllTravels,
-  getTravelsByTag,
 } from "@/lib/travels";
 
 export const metadata: Metadata = {
@@ -13,28 +12,8 @@ export const metadata: Metadata = {
   description: "Archivio completo dei diari di viaggio con filtri per tag.",
 };
 
-type TravelsPageProps = {
-  searchParams?:
-    | {
-        tag?: string | string[];
-      }
-    | Promise<{
-        tag?: string | string[];
-      }>;
-};
-
-export default async function TravelsPage({ searchParams }: TravelsPageProps) {
+export default async function TravelsPage() {
   const allTravels = await getAllTravels();
-  const resolvedSearchParams = (await searchParams) ?? {};
-  const rawTag = resolvedSearchParams.tag;
-  const selectedTag = Array.isArray(rawTag)
-    ? rawTag[0]
-    : rawTag
-    ? decodeURIComponent(rawTag)
-    : undefined;
-
-  const normalizedTag = selectedTag?.toLowerCase();
-  const travels = selectedTag ? getTravelsByTag(selectedTag) : allTravels;
   const tags = getAllTags();
 
   return (
@@ -49,25 +28,9 @@ export default async function TravelsPage({ searchParams }: TravelsPageProps) {
         </p>
       </header>
 
-      <TagFilter tags={tags} activeTag={normalizedTag} />
-
-      {selectedTag && (
-        <p className="text-sm text-brand-muted">
-          Filtrati per tag: <span className="font-semibold text-brand-secondary">#{selectedTag}</span>
-        </p>
-      )}
-
-      <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-        {travels.map((travel) => (
-          <TravelCard key={travel.slug} travel={travel} />
-        ))}
-      </div>
-
-      {!travels.length && (
-        <p className="rounded-2xl border border-dashed border-slate-200 bg-white p-6 text-center text-brand-muted">
-          Nessun viaggio con questo tag per ora. Torna presto!
-        </p>
-      )}
+      <Suspense fallback={<div>Caricamento...</div>}>
+        <TravelsListClient allTravels={allTravels} allTags={tags} />
+      </Suspense>
     </div>
   );
 }

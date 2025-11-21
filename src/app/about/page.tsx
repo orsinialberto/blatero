@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 
+import { withBasePath } from "@/lib/paths";
+
 export const metadata: Metadata = {
   title: "About",
   description: "Chi sono, perché ho aperto questo diario e come contattarmi.",
@@ -36,7 +38,7 @@ export default function AboutPage() {
           </ul>
         </div>
         <div className="relative h-48 w-full overflow-hidden rounded-2xl">
-          <Image src="/images/profile.jpg" alt="Aurora boreale" fill className="object-cover" />
+          <Image src={withBasePath("/images/profile.jpg")} alt="Aurora boreale" fill className="object-cover" />
         </div>
       </aside>
     </div>

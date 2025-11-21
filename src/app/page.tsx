@@ -4,6 +4,7 @@ import Link from "next/link";
 import { TravelCard } from "@/components/TravelCard";
 import { TravelMap } from "@/components/TravelMap";
 import { getAllTravels } from "@/lib/travels";
+import { withBasePath } from "@/lib/paths";
 
 export default async function HomePage() {
   const travels = await getAllTravels();
@@ -14,7 +15,7 @@ export default async function HomePage() {
       <section className="relative overflow-hidden rounded-[32px] bg-white px-8 py-14 shadow-card md:px-12">
         <div className="absolute inset-y-0 right-0 hidden w-1/3 overflow-hidden rounded-l-[32px] md:block">
           <Image
-            src="/images/home-hero.jpg"
+            src={withBasePath("/images/home-hero.jpg")}
             alt="I miei viaggi"
             fill
             priority

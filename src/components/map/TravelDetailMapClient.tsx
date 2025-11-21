@@ -9,6 +9,7 @@ import L from "leaflet";
 import { GeoJSON, MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
 
 import type { TravelCoords, TravelMapData } from "@/lib/travels";
+import { withBasePath } from "@/lib/paths";
 import { createTravelMarkerIcon } from "./markerIcon";
 
 interface TravelDetailMapClientProps {
@@ -38,7 +39,9 @@ export default function TravelDetailMapClient({
       }
 
       try {
-        const response = await fetch(map.gpx);
+        // Aggiungi il basePath al percorso GPX se è un percorso locale
+        const gpxPath = map.gpx.startsWith('http') ? map.gpx : withBasePath(map.gpx);
+        const response = await fetch(gpxPath);
         const text = await response.text();
         const dom = new DOMParser().parseFromString(text, "application/xml");
         const geojson = togeojson.gpx(dom) as FeatureCollection;
