@@ -5,9 +5,9 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 
 const links = [
-  { href: "/", label: "Home" },
-  { href: "/viaggi", label: "Viaggi" },
-  { href: "/about", label: "Chi sono" },
+  { href: "/", label: "HOME" },
+  { href: "/viaggi", label: "VIAGGI" },
+  { href: "/about", label: "CHI SONO" },
 ];
 
 export function Header() {
@@ -48,11 +48,7 @@ export function Header() {
               <li key={link.href}>
                 <Link
                   href={link.href}
-                  className={`text-sm font-medium transition-colors ${
-                    isActive(link.href)
-                      ? "text-brand-primary"
-                      : "text-brand-muted hover:text-brand-primary"
-                  }`}
+                  className="font-klee text-sm font-medium text-brand-primary transition-colors hover:opacity-75"
                   onClick={() => setIsOpen(false)}
                 >
                   {link.label}

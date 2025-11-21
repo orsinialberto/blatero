@@ -18,13 +18,16 @@ export default function AboutPage() {
         <h1 className="text-4xl font-semibold text-brand-primary">Ciao, sono Alberto</h1>
         <div className="space-y-4 text-brand-muted">
           <p className="font-klee text-lg">
-            una delle mie più grandi passioni è viaggiare. Nel 2019 ho percorso il mio primo cammino, il Cammino di Santiago portoghese della costa, e ho scoperto una passione che non mi ha più lasciato. Da allora ogni anno cerco di concedermi almeno un viaggio, in Italia o all'estero. Mettere lo zaino in spalla e camminare per chilometri è diventata una delle cose che più mi rendono felice.
+            Da quando ho messo piede sul mio primo Cammino – quello di Santiago portoghese della costa, nel 2019 – non mi sono più fermato. È stato amore a prima… vescica. Da allora cerco ogni anno di regalarmi almeno un viaggio, che sia dietro casa o dall’altra parte del mondo. Basta avere uno zaino in spalla e un sentiero davanti: è lì che sono davvero felice.
           </p>
           <p className="font-klee text-lg">
-            Oltre ai cammini, adoro viaggiare in moto, affrontare curve di montagna e lasciarmi sorprendere dai panorami che si aprono davanti a me.
+            Quando non cammino, mi trovi probabilmente in moto, a inseguire curve di montagna e panorami che si aprono all’improvviso come scene di un film.
           </p>
           <p className="font-klee text-lg">
-            E poi c'è la voglia di avventura pura: partire senza meta precisa, solo con il mio zaino, e scoprire culture, luoghi e persone diverse da quelle a cui sono abituato. Viaggiare è per me un modo di sentirmi vivo, curioso e libero.
+            E poi c’è la parte più “selvaggia” di me: quella che ama partire senza un piano preciso, solo con lo zaino, qualche idea vaga e tanta voglia di scoprire posti, culture e persone completamente diverse da quelle a cui sono abituato. Viaggiare è per me un modo di sentirmi vivo, curioso e libero.
+          </p>
+          <p className="font-klee text-lg">
+            Viaggiare, per me, è questo: sentirmi vivo, curioso e libero. E finché il mondo avrà strade da percorrere, io continuerò a inseguirle.
           </p>
         </div>
       </section>
@@ -32,9 +35,9 @@ export default function AboutPage() {
         <div>
           <h2 className="text-xl font-semibold text-brand-primary">Compagni di viaggio</h2>
           <ul className="mt-3 space-y-2">
-            <li>✦  Iphone 14 Pro</li>
-            <li>✦  Sony Alpha 6400</li>
-            <li>✦  Honda CB 650R</li>
+            <li className="font-klee">✦  Iphone 14 Pro</li>
+            <li className="font-klee">✦  Sony Alpha 6400</li>
+            <li className="font-klee">✦  Honda CB 650R</li>
           </ul>
         </div>
         <div className="relative h-48 w-full overflow-hidden rounded-2xl">

@@ -19,7 +19,7 @@ export async function TravelMap() {
     <section className="space-y-4 rounded-[32px] bg-white p-8 shadow-card">
       <div className="space-y-2">
         <p className="text-xs font-semibold uppercase tracking-[0.3em] text-brand-muted">
-          Mappa interattiva
+          Mappa
         </p>
         <h2 className="text-3xl font-semibold text-brand-primary">
           I luoghi visitati
