@@ -77,9 +77,9 @@ map:
       lng: 12.216297
       description: "Buchi di Baschi"
 gallery:
+  - "https://res.cloudinary.com/dx6hrvg6l/image/upload/v1763734562/photo-03_nkm9b9.jpg"
   - "https://res.cloudinary.com/dx6hrvg6l/image/upload/v1763734562/photo-01_q8trbr.jpg"
   - "https://res.cloudinary.com/dx6hrvg6l/image/upload/v1763734562/photo-02_igqu4p.jpg"
-  - "https://res.cloudinary.com/dx6hrvg6l/image/upload/v1763734562/photo-03_nkm9b9.jpg"
   - "https://res.cloudinary.com/dx6hrvg6l/image/upload/v1763734562/photo-04_xpisb5.jpg"
   - "https://res.cloudinary.com/dx6hrvg6l/image/upload/v1763734562/photo-05_u1wlcy.jpg"
   - "https://res.cloudinary.com/dx6hrvg6l/image/upload/v1763734562/photo-06_lqwnwn.jpg"

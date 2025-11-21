@@ -69,7 +69,7 @@ export default async function TravelPage({ params }: TravelPageProps) {
               {travel.location}
             </p>
             <h1
-              className={`mt-3 max-w-2xl text-4xl font-semibold leading-tight ${heroTitleClass}`}
+              className={`font-comforter mt-3 max-w-2xl text-5xl font-normal leading-tight md:text-6xl lg:text-7xl ${heroTitleClass}`}
             >
               {travel.title}
             </h1>
