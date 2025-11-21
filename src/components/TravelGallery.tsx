@@ -112,7 +112,6 @@ export function TravelGallery({ images, title }: TravelGalleryProps) {
           <h3 className="text-2xl font-semibold text-brand-primary">{title}</h3>
         </div>
         <div className="flex flex-wrap items-center gap-2 text-sm">
-          <span className="text-brand-muted">Swipe su mobile, click su desktop</span>
           {remainingCount > 0 && (
             <button
               type="button"
@@ -234,7 +233,7 @@ export function TravelGallery({ images, title }: TravelGalleryProps) {
       )}
 
       {isLightboxOpen && (
-        <div className="fixed inset-0 z-[80] flex flex-col bg-black/90 backdrop-blur">
+        <div className="fixed inset-0 z-[9999] flex flex-col bg-black/90 backdrop-blur">
           <div className="flex items-center justify-between px-6 py-4 text-white">
             <p className="text-sm font-semibold uppercase tracking-[0.3em]">
               Galleria completa
@@ -286,7 +285,7 @@ export function TravelGallery({ images, title }: TravelGalleryProps) {
 
         return (
           <div
-            className="fixed inset-0 z-[90] flex items-center justify-center bg-black/95 backdrop-blur"
+            className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/95 backdrop-blur"
             onClick={() => setFullImageOpen(null)}
           >
             <button

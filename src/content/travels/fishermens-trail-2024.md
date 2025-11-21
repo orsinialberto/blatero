@@ -79,6 +79,8 @@ gallery:
 
 # Introduzione
 
+In arrivo 
+
 ## Giorno 1: 
 
 ## Giorno 2: 

@@ -7,7 +7,7 @@ import { useState } from "react";
 const links = [
   { href: "/", label: "Home" },
   { href: "/viaggi", label: "Viaggi" },
-  { href: "/about", label: "About" },
+  { href: "/about", label: "Chi sono" },
 ];
 
 export function Header() {

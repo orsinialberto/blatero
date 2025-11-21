@@ -108,3 +108,16 @@ a {
 .leaflet-popup-tip {
   background: #ffffff;
 }
+
+/* Assicura che la mappa non sovrapponga la galleria quando è aperta */
+.leaflet-container {
+  z-index: 1;
+}
+
+.leaflet-pane {
+  z-index: 2;
+}
+
+.leaflet-map-pane {
+  z-index: 1;
+}
