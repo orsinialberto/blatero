@@ -83,16 +83,16 @@ export function TravelTimeline({ timeline }: TravelTimelineProps) {
 
                   {/* Km tra i pallini - leggermente sotto la riga */}
                   {nextItem?.km !== undefined && (
-                    <div className="absolute top-[42px] right-0 translate-x-1/2">
-                      <span className="text-xs font-medium text-brand-muted whitespace-nowrap">
+                    <div className="absolute top-[38px] right-0 translate-x-1/2">
+                      <span className="text-[10px] font-medium text-brand-muted whitespace-nowrap">
                         {nextItem.km} km
                       </span>
                     </div>
                   )}
 
-                  {/* Nome città - alternato sopra/sotto la riga */}
-                  <div className={`absolute ${isEven ? '-top-10' : 'top-24'} text-center`}>
-                    <p className="text-base font-semibold font-klee text-brand-primary whitespace-nowrap">
+                  {/* Nome città - alternato sopra/sotto la riga con wrapping controllato */}
+                  <div className={`absolute ${isEven ? '-top-10' : 'top-24'} left-1/2 -translate-x-1/2 text-center w-[120px] px-1`}>
+                    <p className="text-base font-semibold font-klee text-brand-primary leading-tight break-words hyphens-auto">
                       {item.city}
                     </p>
                   </div>
