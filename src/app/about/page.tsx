@@ -43,6 +43,10 @@ export default function AboutPage() {
         <div className="relative h-48 w-full overflow-hidden rounded-2xl">
           <Image src={withBasePath("/images/profile.jpg")} alt="Aurora boreale" fill className="object-cover" />
         </div>
+        <div>
+          <h2 className="text-xl font-semibold text-brand-primary">Contatti</h2>
+          <p className="mt-3 font-klee">orsini.alberto@hotmail.it</p>
+        </div>
       </aside>
     </div>
   );
