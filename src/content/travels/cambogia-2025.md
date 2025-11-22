@@ -1,5 +1,5 @@
 ---
-title: "Cambogia Road Trip"
+title: "Cambogia Adventure"
 slug: "cambogia-2025"
 date: "2025-06-02"
 endDate: "2025-06-15"
@@ -70,10 +70,15 @@ La Cambogia è uno di quei paesi che ti sorprendono appena metti piede fuori dal
 ## Phnom Penh
 
 Phnom Penh, la capitale della Cambogia, è una città fatta di contrasti così forti da lasciarti disorientato fin dal primo istante. Il mio primo impatto è stato quasi traumatico: prendo il primo tuk tuk della mia vita e ancora oggi non so spiegarmi come siamo riusciti ad arrivare sani e salvi all’ostello. Il traffico è puro caos, un’entropia totale in cui sembra non esistere alcuna regola… eppure tutto scorre, tutto funziona. Le strade sono invase da tuk tuk e remork moto, due per corsia, con motorini che si infilano in ogni spazio possibile. In mezzo a questo fiume di mezzi compaiono poi auto di lusso dai vetri oscurati, come se appartenessero a un altro mondo. È un caos controllato, inspiegabilmente efficace. Incredibile a dirsi, ma non ho visto un solo incidente.
+
 Girando per la città si nota subito una spaccatura evidente: la zona turistica, curata e ordinata, e il resto della città, dove la vita scorre in modo più crudo. Qui tantissime persone molto povere lavorano in piccoli negozi improvvisati lungo le strade, vendendo di tutto. Ma sono soprattutto i mercati ad avermi colpito: rappresentano la vera Asia, quella che immaginavo prima di partire. Gente seduta a terra che vende qualunque tipo di cibo, bancarelle coperte da lamiere che fanno da tetto e da pareti, vicoli talmente stretti da farti perdere l’orientamento. Per i cambogiani è normalità; per me è stato uno shock culturale affascinante, qualcosa di completamente diverso dalle mie abitudini.
+
 Ho visitato le principali attrazioni della città: il Museo Nazionale, il Palazzo Reale e la Pagoda d’Argento. Tutti luoghi belli e interessanti, ma nulla mi ha colpito quanto ciò che si trova appena fuori Phnom Penh. Ho visitato un Killing Field e ne sono uscito scosso. La sensazione era la stessa che avevo provato visitando un campo di concentramento nazista: un’aria pesante, un silenzio che ti schiaccia, una tristezza difficile da descrivere. Mentre ascoltavo la storia del regime dei Khmer Rossi continuavo a farmi domande. L’orrore che l’essere umano è in grado di infliggere ad altri esseri umani è qualcosa che fatichiamo a comprendere. Quante vite spezzate per un’ideologia.
+
 Nonostante tutto, ho avuto la sensazione che i cambogiani stiano vivendo una fase nuova, più serena. È un popolo che porta le cicatrici della sua storia ma che sembra guardare avanti con una forza ammirevole.
+
 Phnom Penh, però, non è solo storia e caos: è anche il luogo dove ho mangiato il miglior cibo di tutta la Cambogia. Ho provato le rane fritte, il Lok Lak – un piatto di manzo speziato servito con riso – e l’Amok di pesce, una vera delizia che ancora oggi, solo a pensarci, mi fa venire l’acquolina in bocca.
+
 A distanza di tempo non so ancora dire con certezza se Phnom Penh mi sia piaciuta oppure no. È una città che divide, che ti confonde, che ti provoca. Una città di contrasti, come ho scritto all’inizio. Forse è proprio per questo che mi è rimasta dentro: perché non ti lascia indifferente.
 
 ![Palazzo reale](https://res.cloudinary.com/dx6hrvg6l/image/upload/v1763735049/photo-28_m2ekfl.jpg)
@@ -81,13 +86,21 @@ A distanza di tempo non so ancora dire con certezza se Phnom Penh mi sia piaciut
 ## Battambang
 
 Battambang è una città che conserva un affascinante stile coloniale francese, un contrasto elegante rispetto alla vita rurale che la circonda. Grazie a un tour organizzato dall’ostello ho avuto l’occasione di immergermi nella quotidianità della Cambogia più autentica. Ho visto una famiglia produrre la carta di riso direttamente a casa, un’altra distillare il vino di riso, un liquore molto forte che i cambogiani bevono spesso dopo i pasti. Lungo la strada ho incontrato una signora che cucinava ratti alla griglia: la guida ci ha spiegato che, durante il periodo dei Khmer Rossi, la popolazione era costretta a mangiare tutto ciò che trovava, dai ratti agli insetti.
+
 Tra le varie bancarelle ho assaggiato il bamboo sticky rice, un dolce tipico fatto di riso cotto dentro una canna di bambù: semplice, dolce, particolare.
+
 Lasciata la zona rurale, ho avuto anche il mio primo assaggio della cultura angkoriana visitando Wat Ek Phnom, un tempio dell’epoca di Angkor, solo un’anticipazione di ciò che avrei visto poi a Siem Reap.
+
 A Battambang ho provato anche la famosa esperienza del bamboo train: una specie di piattaforma montata su binari reali che sfreccia tra i campi cambogiani. Un’attrazione divertente… finché non ci hanno fermato annunciando che stava arrivando il treno vero. Solo in quel momento ho realizzato che non si trattava di una linea abbandonata: pura follia cambogiana.
+
 Ho visitato poi Phnom Sampeau, dove si trovano la Killing Cave e la Bat Cave. La Killing Cave è un luogo di memoria terribile: un’altura dove i Khmer Rossi torturavano e uccidevano i cambogiani. Colpiscono i templi costruiti in cima, immersi nella foresta, e le scimmie che popolano l’area convivendo con gli abitanti… spaventando tutti i turisti.
+
 Sotto l’altura si trova la Bat Cave: al tramonto ho assistito a uno spettacolo impressionante. Milioni di pipistrelli – si stima circa 6,5 milioni – escono dalla caverna e volano in direzione del lago Tonlé Sap in cerca di cibo. Per più di un’ora ho guardato questo fiume nero animato scorrere nel cielo: un’immagine che non dimenticherò facilmente.
+
 Ed è proprio qui, in questa parte della Cambogia, che ho visto i panorami più belli del viaggio: la vista dall’alto di Phnom Sampeau, i campi di riso attraversati dalla ferrovia e l’ingresso nel gigantesco lago Tonlé Sap, dove una mandria di bufali brucava l’erba immersa nell’acqua. Scorci così intensi da restare impressi anche senza bisogno di una foto.
+
 Una menzione speciale va al viaggio da Battambang a Siem Reap. Ho percorso il tragitto su una piccola barca che risale il fiume fino al Tonlé Sap. Durante la navigazione ho potuto ammirare i famosi floating villages, villaggi costruiti su palafitte dove la vita si svolge interamente sull’acqua: bambini che guidano da soli la barca per andare a scuola, famiglie che pescano, cucinano e vivono sospese tra cielo e fiume.
+
 Mi ha colpito anche l’enorme distesa di fiori di loto asiatico che ricopriva il corso d’acqua: a un certo punto la barca si è persino incagliata in mezzo a quel tappeto verde, riuscendo a liberarsi solo grazie all’abilità del barcaiolo cambogiano.
 
 ![Floating Village](https://res.cloudinary.com/dx6hrvg6l/image/upload/v1763735049/photo-19_oynzbt.jpg)
@@ -98,5 +111,6 @@ Mi ha colpito anche l’enorme distesa di fiori di loto asiatico che ricopriva i
 
 ## Kampot - Kep
 
-Ho sempre voluto fare un viaggio in Asia e quando ho deciso di andare in Cambogia è stato per trovare quell'autenticità che altri paesi più turistici non hanno. Volevo vivere un'avventura zaino in spalla, dormire negli ostelli, mangiare il cibo locale e spostarmi con i mezzi locali. Ho fatto tutto questo ne se sono uscito felice. 
+Ho sempre voluto fare un viaggio in Asia e quando ho deciso di andare in Cambogia è stato per trovare quell'autenticità che altri paesi più turistici non hanno. Volevo vivere un'avventura zaino in spalla, dormire negli ostelli, mangiare il cibo locale e spostarmi con i mezzi locali. Ho fatto tutto questo ne se sono uscito felice.
+
 Questo viaggio mi ha fatto conoscere un mondo completamente diverso da noi, ricco di forti contrasti. Persone molto povere e persone molto ricche, una generazione ferita e umiliata dal regime Khmer e una popolazione orgogliosa delle sue radici nella civiltà Angkoriana. La Cambogia è tutto questo e sicuramente questo viaggio mi ha fatto riflettere. Siamo tutti sullo stesso mondo ma viviamo vite completamente diverse.
