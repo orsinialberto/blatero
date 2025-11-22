@@ -109,7 +109,6 @@ export function TravelGallery({ images, title }: TravelGalleryProps) {
           <p className="text-xs font-semibold uppercase tracking-[0.3em] text-brand-muted">
             Galleria fotografica
           </p>
-          <h3 className="text-2xl font-semibold text-brand-primary">{title}</h3>
         </div>
         <div className="flex flex-wrap items-center gap-2 text-sm">
           {remainingCount > 0 && (
