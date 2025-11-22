@@ -60,6 +60,7 @@ gallery:
   - "https://res.cloudinary.com/dx6hrvg6l/image/upload/v1763735049/photo-05_qeom3w.jpg"
   - "https://res.cloudinary.com/dx6hrvg6l/image/upload/v1763735049/photo-04_vq986b.jpg"
   - "https://res.cloudinary.com/dx6hrvg6l/image/upload/v1763735049/photo-02_euku4l.jpg"
+  - "https://res.cloudinary.com/dx6hrvg6l/image/upload/v1763804680/photo-01_e5fklu.jpg"
 
 ---
 
@@ -151,6 +152,20 @@ Eppure, nonostante tutto, la bellezza di Preah Vihear resta qualcosa di difficil
 
 ## Kampot - Kep
 
-Ho sempre voluto fare un viaggio in Asia e quando ho deciso di andare in Cambogia è stato per trovare quell'autenticità che altri paesi più turistici non hanno. Volevo vivere un'avventura zaino in spalla, dormire negli ostelli, mangiare il cibo locale e spostarmi con i mezzi locali. Ho fatto tutto questo ne se sono uscito felice.
+L’ultima tappa del mio viaggio è stata Kampot. Per raggiungerla ho attraversato praticamente tutta la Cambogia: quasi dieci ore su un pulmino condiviso con la popolazione locale. I cambogiani usano spesso questi mezzi per spostarsi e ci caricano davvero di tutto. Sul mio, oltre ai passeggeri, viaggiavano sacchi enormi di riso e persino un motorino. Un’esperienza decisamente autentica.
 
-Questo viaggio mi ha fatto conoscere un mondo completamente diverso da noi, ricco di forti contrasti. Persone molto povere e persone molto ricche, una generazione ferita e umiliata dal regime Khmer e una popolazione orgogliosa delle sue radici nella civiltà Angkoriana. La Cambogia è tutto questo e sicuramente questo viaggio mi ha fatto riflettere. Siamo tutti sullo stesso mondo ma viviamo vite completamente diverse.
+Kampot è una cittadina tranquilla affacciata su un fiume lento, con un’aria che sembra cambiare a seconda della stagione. In estate si anima con sport acquatici e vita notturna; a giugno, quando ci sono stato io, la città era più silenziosa, quasi sonnolenta. L’ostello in cui alloggiavo era immerso nel verde, sulle rive del fiume: un posto bellissimo, quasi sospeso nel tempo. Peccato che la bassa affluenza turistica e la pioggia quotidiana lo rendessero un po’ troppo quieto.
+
+Kampot è famosa per il pepe, considerato uno dei migliori al mondo. Ho visitato una piccola azienda agricola dove i lavoratori selezionavano a mano, uno per uno, i chicchi destinati all’esportazione. Un lavoro meticoloso che rivela quanto questo prodotto sia prezioso per la regione. Per il resto, Kampot mi è sembrata una città serena, costellata di bar e ristorantini lungo il fiume, molto più residenziale rispetto alle altre località viste in Cambogia.
+
+![Raccolta pepe](https://res.cloudinary.com/dx6hrvg6l/image/upload/v1763804680/photo-01_e5fklu.jpg)
+
+A poca distanza si trova Kep, famosa per il suo mercato del granchio. Qui ho visto quantità impressionanti di pesce fresco e montagne di granchi appena pescati, pronti per essere cucinati. L’atmosfera è quella caotica e vibrante dei mercati del Sud-Est asiatico: profumi intensi, grida dei venditori, pentole fumanti. Dopo averlo visto non potevo certo andarmene senza assaggiare il celebre granchio al pepe di Kampot. Dopo l’Amok, è sicuramente una delle cose più buone che abbia mangiato in tutto il viaggio.
+
+Ho sempre sognato di fare un viaggio in Asia e quando ho scelto la Cambogia l’ho fatto con un desiderio preciso: trovare quell’autenticità che i Paesi più turistici spesso perdono. Volevo vivere un’avventura zaino in spalla, dormire negli ostelli, mangiare il cibo locale, spostarmi come fanno i cambogiani. E alla fine posso dire di aver trovato esattamente ciò che cercavo — e forse anche di più.
+
+La Cambogia mi ha mostrato un mondo lontanissimo dal mio, fatto di contrasti forti, estremi. Ho visto povertà profonda e ricchezze inattese, una generazione ancora segnata dalle ferite del regime dei Khmer Rossi e allo stesso tempo un popolo orgoglioso delle proprie radici, figlie della straordinaria civiltà angkoriana. Un Paese che porta addosso sia le cicatrici che la grandezza della sua storia.
+
+Questo viaggio mi ha fatto riflettere molto: viviamo tutti nello stesso mondo, eppure le nostre vite scorrono su binari completamente diversi. La Cambogia mi ha lasciato questo pensiero, insieme alla sensazione di essere cresciuto un po’ come viaggiatore e come persona.
+
+Un viaggio autentico, duro e bellissimo. Uno di quelli che ti rimangono dentro.
