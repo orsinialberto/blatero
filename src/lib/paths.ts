@@ -2,7 +2,7 @@
  * Base path per GitHub Pages
  * Deve corrispondere al basePath in next.config.ts
  */
-export const BASE_PATH = '/blatero';
+export const BASE_PATH = '/blog';
 
 /**
  * Aggiunge il basePath a un percorso se necessario

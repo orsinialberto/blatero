@@ -13,7 +13,7 @@ const nextConfig: NextConfig = {
     ],
   },
   devIndicators: false,
-  basePath: '/blatero', 
+  basePath: '/blog', 
   trailingSlash: true,
 };
 
