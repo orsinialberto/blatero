@@ -4,7 +4,7 @@ import Image from "next/image";
 import { withBasePath } from "@/lib/paths";
 
 export const metadata: Metadata = {
-  title: "About",
+  title: "Chi sono",
   description: "Chi sono, perché ho aperto questo diario e come contattarmi.",
 };
 
@@ -13,7 +13,7 @@ export default function AboutPage() {
     <div className="container grid gap-10 lg:grid-cols-[1fr_320px]">
       <section className="space-y-6 rounded-[32px] bg-white p-8 shadow-card">
         <p className="text-xs font-semibold uppercase tracking-[0.3em] text-brand-muted">
-          About
+          Chi sono
         </p>
         <h1 className="text-4xl font-semibold text-brand-primary">Ciao, sono Alberto</h1>
         <div className="space-y-4 text-brand-muted">
