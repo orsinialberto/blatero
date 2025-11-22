@@ -21,9 +21,6 @@ export async function TravelMap() {
         <p className="text-xs font-semibold uppercase tracking-[0.3em] text-brand-muted">
           Mappa
         </p>
-        <h2 className="text-3xl font-semibold text-brand-primary">
-          I luoghi visitati
-        </h2>
       </div>
       <div className="h-[420px] w-full overflow-hidden rounded-[28px] bg-brand-background">
         <TravelMapLazy travels={travelsWithCoords} />

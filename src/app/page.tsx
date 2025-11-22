@@ -65,9 +65,6 @@ export default async function HomePage() {
             <p className="text-xs font-semibold uppercase tracking-[0.3em] text-brand-muted">
               Ultime pubblicazioni
             </p>
-            <h2 className="mt-2 text-3xl font-semibold text-brand-primary">
-              Gli ultimi viaggi aggiunti
-            </h2>
           </div>
           <Link
             href="/viaggi"
