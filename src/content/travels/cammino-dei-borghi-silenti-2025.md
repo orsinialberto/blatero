@@ -62,7 +62,7 @@ map:
       direction: "Sud-Ovest"
     - name: "Melezzole"
       lat: 42.668161 
-      lng: 12.338199F
+      lng: 12.338199
       description: "Tappa panoramica tra faggete e borghi"
     - name: "Morre"
       lat: 42.709748 
@@ -76,6 +76,18 @@ map:
       lat: 42.669538 
       lng: 12.216297
       description: "Buchi di Baschi"
+timeline:
+  - city: "Tenaglie"
+  - city: "Melezzole"
+    km: 29
+  - city: "Morre"
+    km: 17.2
+  - city: "Civitella del Lago"
+    km: 15.3
+  - city: "Baschi"
+    km: 13
+  - city: "Tenaglie"
+    km: 16
 gallery:
   - "https://res.cloudinary.com/dx6hrvg6l/image/upload/v1763734562/photo-03_nkm9b9.jpg"
   - "https://res.cloudinary.com/dx6hrvg6l/image/upload/v1763734562/photo-01_q8trbr.jpg"
@@ -97,7 +109,7 @@ Il Cammino dei Borghi Silenti è uno di quei percorsi che ti sorprendono fin dal
 
 Mi ha ricordato un po’ il Cammino di Santiago, ma qui la bellezza italiana aggiunge quel tocco in più che rende l’esperienza ancora più speciale. Un cammino che non fa solo camminare, ma rallentare.
 
-## Giorno 1: Tenaglie - Melezzole 29 km
+## Giorno 1: Tenaglie - Melezzole
 
 La prima giornata del cammino parte con la sveglia all’alba, uno di quei momenti in cui ti chiedi perché tu abbia deciso di fare una vacanza… camminando. Una colazione veloce al bar del paese e poi via, si parte davvero. In pochi minuti l’asfalto sparisce alle spalle e mi ritrovo immerso nei campi di lenticchie, avvolti da nuvole basse che sfiorano il terreno mentre il sole fa fatica ad affacciarsi.
 
@@ -119,7 +131,7 @@ L’ultimo tratto passa veloce e in poco tempo raggiungiamo il terzo borgo della
 
 La giornata si chiude così: il tempo di ritrovarci tutti per la cena, due chiacchiere e poi dritti in camera. Dopo tutto quel saliscendi, crollare a letto non è una scelta… è la naturale conseguenza.
 
-## Giorno 2: Melezzole - Morre 17,2 km
+## Giorno 2: Melezzole - Morre
 
 Il secondo giorno comincia con pochi chilometri tranquilli… prima che la salita decida di farsi davvero sentire. Le gambe protestano, il fiato si fa corto, ma con un passo lento e costante riesco a raggiungere la vetta. In cima, il paesaggio si apre e un grande prato accompagna i nostri passi verso il punto più alto del monte. Purtroppo è ancora presto e, a settembre, le colline umbre al mattino amano nascondersi dietro nuvole basse e una pioggerellina leggera. Pazienza, la natura ha i suoi tempi.
 
@@ -135,7 +147,7 @@ Quando arriva l’ora di cena, ci ritroviamo tutti nell’unico agriturismo dell
 
 ![Tramonto Morre](https://res.cloudinary.com/dx6hrvg6l/image/upload/v1763734562/photo-07_st2g7w.jpg)
 
-## Giorno 3: Morre - Civitella del Lago 15,3 km
+## Giorno 3: Morre - Civitella del Lago
 
 Il terzo giorno di cammino inizia con un pensiero rassicurante: "solo 15 chilometri, e la parte più dura ormai è alle spalle". In realtà, sto imparando che camminare nel cuore dell’Italia significa affrontare l’Appennino in eterno saliscendi, senza mai un attimo di tregua.
 
@@ -151,7 +163,7 @@ La sera ceniamo in una locanda del paese, sempre con vista sul lago, mentre il c
 
 ![Tramonto Civitella del Lago](https://res.cloudinary.com/dx6hrvg6l/image/upload/v1763734562/photo-09_e6kow7.jpg)
 
-## Giorno 4: Civitella del Lago - Baschi 13 km
+## Giorno 4: Civitella del Lago - Baschi
 
 Il quarto giorno parte tranquillo: ormai siamo quasi alla fine e la tappa di oggi è breve. L’obiettivo non è correre, ma raggiungere la famosa cantina che offre una degustazione ai camminatori.
 
@@ -165,7 +177,7 @@ Prima di arrivare all’alloggio, facciamo tappa all’alimentari per prendere u
 
 La sera siamo fortunati: riusciamo a cenare tutti insieme, con il gruppo di camminatori incontrato nei giorni precedenti. È l’ultima cena insieme e, quando arrivano i saluti, un po’ di tristezza si fa sentire. Ma la serata non finisce qui: nel parco del paese c’è una festa e sta suonando una band chiamata "Sciroccati". La notte si anima, cantiamo e balliamo finché le gambe reggono, chiudendo così la giornata con un sorriso e tanta allegria.
 
-## Giorno 5: Baschi - Tenaglie 16 km
+## Giorno 5: Baschi - Tenaglie
 
 L’ultimo giorno è tutto un cammino verso il rientro. La coppia che ci ha ospitato ci accoglie con una colazione degna di una pasticceria: brioches, torte, paste… e guai a lasciarne anche solo un pezzo! Un gesto semplice e genuino, che ricorderò a lungo. Dopo averli salutati, riprendiamo a camminare.
 

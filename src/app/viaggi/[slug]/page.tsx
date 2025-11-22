@@ -4,6 +4,7 @@ import Link from "next/link";
 
 import { TravelGallery } from "@/components/TravelGallery";
 import { TravelDetailMap } from "@/components/TravelDetailMap";
+import { TravelTimeline } from "@/components/TravelTimeline";
 import { formatDateRange } from "@/lib/dates";
 import { getAllTravels, getTravelBySlug, type Travel } from "@/lib/travels";
 
@@ -94,6 +95,8 @@ export default async function TravelPage({ params }: TravelPageProps) {
           </div>
         </div>
       </div>
+
+      {travel.timeline && <TravelTimeline timeline={travel.timeline} />}
 
       <section className="rounded-[32px] bg-white p-8 shadow-card">
         <div

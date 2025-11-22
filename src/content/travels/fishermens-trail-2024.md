@@ -75,30 +75,32 @@ map:
 
 gallery:
   - "https://res.cloudinary.com/dx6hrvg6l/image/upload/v1763735141/photo-01_zrs1jh.jpg"
+timeline:
+  - city: "Porto Covo"
+  - city: "Vila Nova de Milfontes"
+    km: 19.6
+  - city: "Almograve"
+    km: 14.7
+  - city: "Zambujeira do Mar"
+    km: 21.5
+  - city: "Odeceixe"
+    km: 18.7
+  - city: "Aljezur"
+    km: 22.6
+  - city: "Arrifana"
+    km: 17.1
+  - city: "Carrapateira"
+    km: 19.4
+  - city: "Vila do Bispo"
+    km: 15.3
+  - city: "Sagres"
+    km: 20.2
+  - city: "Luz"
+    km: 30.5
+  - city: "Lagos"
+    km: 10.9
 ---
 
 # Introduzione
 
 In arrivo 
-
-## Giorno 1: Porto Covo - Vila Nova de Milfontes 19,6km
-
-## Giorno 2: Vila Nova de Milfontes - Almograve 14,7km
-
-## Giorno 3: Almograve - Zambujeira do Mar 21,5km
-
-## Giorno 4: Zambujeira do Mar - Odeceixe 18,7km
-
-## Giorno 5: Odeceixe - Aljezur 22,6km
-
-## Giorno 6: Aljezur - Arrifana 17,1km
-
-## Giorno 7: Arrifana - Carrapateira 19,4km
-
-## Giorno 8: Carrapateira - Vila do Bispo 15,3km
-
-## Giorno 9: Vila do Bispo - Sagres 20,2km
-
-## Giorno 10: Sagres - Luz 30,5 km
-
-## Giorno 11: Luz - Lagos 10,9km

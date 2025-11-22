@@ -21,6 +21,11 @@ export interface TravelMapData {
   points?: TravelMapPoint[];
 }
 
+export interface TravelTimelineItem {
+  city: string;
+  km?: number;
+}
+
 export interface Travel {
   slug: string;
   title: string;
@@ -37,6 +42,7 @@ export interface Travel {
   heroTitleVariant: "light" | "dark";
   map?: TravelMapData;
   totalKilometers?: number;
+  timeline?: TravelTimelineItem[];
 }
 
 const travelsDirectory = path.join(process.cwd(), "src", "content", "travels");
@@ -89,6 +95,7 @@ function parseTravelFromFile(slug: string): Travel {
     heroTitleVariant: parseHeroTitleVariant(data.heroTitleVariant),
     map: parseMap(data.map),
     totalKilometers: normalizeNumber(data.totalKilometers),
+    timeline: parseTimeline(data.timeline),
   } satisfies Travel;
 }
 
@@ -191,6 +198,45 @@ function parseMapPoint(rawPoint: unknown): TravelMapPoint | undefined {
     description,
     lat,
     lng,
+  };
+}
+
+function parseTimeline(rawTimeline: unknown): Travel["timeline"] {
+  if (!Array.isArray(rawTimeline) || rawTimeline.length === 0) {
+    return undefined;
+  }
+
+  const timeline = rawTimeline
+    .map(parseTimelineItem)
+    .filter((item): item is TravelTimelineItem => Boolean(item));
+
+  if (timeline.length === 0) {
+    return undefined;
+  }
+
+  return timeline;
+}
+
+function parseTimelineItem(rawItem: unknown): TravelTimelineItem | undefined {
+  if (!rawItem || typeof rawItem !== "object" || Array.isArray(rawItem)) {
+    return undefined;
+  }
+
+  const item = rawItem as Record<string, unknown>;
+  const city =
+    typeof item.city === "string" && item.city.trim().length > 0
+      ? item.city.trim()
+      : undefined;
+
+  if (!city) {
+    return undefined;
+  }
+
+  const km = normalizeNumber(item.km);
+
+  return {
+    city,
+    km,
   };
 }
 
