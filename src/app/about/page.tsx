@@ -18,16 +18,19 @@ export default function AboutPage() {
         <h1 className="text-4xl font-semibold text-brand-primary">Ciao, sono Alberto</h1>
         <div className="space-y-4 text-brand-muted">
           <p className="font-klee text-lg">
-            Da quando ho messo piede sul mio primo Cammino – quello di Santiago portoghese della costa, nel 2019 – non mi sono più fermato. È stato amore a prima… vescica. Da allora cerco ogni anno di regalarmi almeno un viaggio, che sia dietro casa o dall’altra parte del mondo. Basta avere uno zaino in spalla e un sentiero davanti: è lì che sono davvero felice.
+            Da quando ho messo piede sul mio primo Cammino – quello di Santiago portoghese della costa, nel 2019 – non mi sono più fermato. 
+            È stato amore a prima… vescica. Da allora cerco ogni anno di regalarmi almeno un viaggio, 
+            che sia dietro casa o dall’altra parte del mondo. 
+            Basta avere uno zaino in spalla e un sentiero davanti: è lì che sono davvero felice.
           </p>
           <p className="font-klee text-lg">
-            Quando non cammino, mi trovi probabilmente in moto, a inseguire curve di montagna e panorami che si aprono all’improvviso come scene di un film.
+            Quando non cammino, mi trovi probabilmente in moto, 
+            a inseguire curve di montagna e panorami che si aprono all’improvviso come scene di un film.
           </p>
           <p className="font-klee text-lg">
-            E poi c’è la parte più “selvaggia” di me: quella che ama partire senza un piano preciso, solo con lo zaino, qualche idea vaga e tanta voglia di scoprire posti, culture e persone completamente diverse da quelle a cui sono abituato. Viaggiare è per me un modo di sentirmi vivo, curioso e libero.
-          </p>
-          <p className="font-klee text-lg">
-            Viaggiare, per me, è questo: sentirmi vivo, curioso e libero. E finché il mondo avrà strade da percorrere, io continuerò a inseguirle.
+            E poi c’è la parte più “selvaggia” di me: quella che ama partire senza un piano preciso, solo con lo zaino, 
+            qualche idea vaga e tanta voglia di scoprire posti, culture e persone completamente diverse da quelle a cui sono abituato. 
+            Viaggiare è per me un modo di sentirmi vivo, curioso e libero.
           </p>
         </div>
       </section>
