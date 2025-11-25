@@ -8,7 +8,7 @@ import { withBasePath } from "@/lib/paths";
 
 export default async function HomePage() {
   const travels = await getAllTravels();
-  const highlights = travels.slice(0, 6);
+  const highlights = travels.slice(0, 3);
 
   return (
     <div className="space-y-16">

@@ -8,9 +8,9 @@ coverImage: "https://res.cloudinary.com/dx6hrvg6l/image/upload/v1763734562/photo
 heroTitleVariant: "light"
 tags:
   - Italia
+  - Europa
   - Umbria
   - Cammini
-  - Borghi
   - ZainoInSpalla
 location: "Italia"
 duration: "5 giorni"

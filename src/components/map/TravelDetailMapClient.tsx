@@ -7,6 +7,7 @@ import { useEffect, useMemo, useState } from "react";
 import type { LatLngBounds, LatLngExpression } from "leaflet";
 import L from "leaflet";
 import { GeoJSON, MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
+import JSZip from "jszip";
 
 import type { TravelCoords, TravelMapData } from "@/lib/travels";
 import { withBasePath } from "@/lib/paths";
@@ -33,23 +34,61 @@ export default function TravelDetailMapClient({
     let cancelled = false;
 
     async function loadTrack() {
-      if (!map.gpx) {
+      const trackFile = map.gpx || map.kml || map.kmz;
+      if (!trackFile) {
         setTrack(null);
         return;
       }
 
       try {
-        // Aggiungi il basePath al percorso GPX se è un percorso locale
-        const gpxPath = map.gpx.startsWith('http') ? map.gpx : withBasePath(map.gpx);
-        const response = await fetch(gpxPath);
-        const text = await response.text();
-        const dom = new DOMParser().parseFromString(text, "application/xml");
-        const geojson = togeojson.gpx(dom) as FeatureCollection;
+        // Aggiungi il basePath al percorso se è un percorso locale
+        const trackPath = trackFile.startsWith('http') ? trackFile : withBasePath(trackFile);
+        const response = await fetch(trackPath);
+        
+        let xmlText: string;
+        
+        // Se è un file KMZ, decomprimilo prima
+        if (map.kmz) {
+          const arrayBuffer = await response.arrayBuffer();
+          const zip = await JSZip.loadAsync(arrayBuffer);
+          
+          // Cerca il file KML all'interno del KMZ (di solito è il primo file .kml)
+          const kmlFile = Object.keys(zip.files).find(name => 
+            name.toLowerCase().endsWith('.kml')
+          );
+          
+          if (!kmlFile) {
+            throw new Error("Nessun file KML trovato nel KMZ");
+          }
+          
+          xmlText = await zip.files[kmlFile].async('string');
+        } else {
+          xmlText = await response.text();
+        }
+        
+        const dom = new DOMParser().parseFromString(xmlText, "application/xml");
+        
+        // Usa togeojson.kml per KML/KMZ, togeojson.gpx per GPX
+        const geojson = (map.kml || map.kmz) 
+          ? (togeojson.kml(dom) as FeatureCollection)
+          : (togeojson.gpx(dom) as FeatureCollection);
+        
+        // Filtra i Point features per evitare marker indesiderati con "?"
+        // Manteniamo solo LineString, MultiLineString e altre geometrie di percorso
+        const filteredGeoJson: FeatureCollection = {
+          ...geojson,
+          features: geojson.features.filter(
+            (feature) => 
+              feature.geometry.type !== "Point" && 
+              feature.geometry.type !== "MultiPoint"
+          ),
+        };
+        
         if (!cancelled) {
-          setTrack(geojson);
+          setTrack(filteredGeoJson);
         }
       } catch (error) {
-        console.error("Impossibile caricare il GPX", error);
+        console.error(`Impossibile caricare il file tracciato (${trackFile})`, error);
         if (!cancelled) {
           setTrack(null);
         }
@@ -61,7 +100,7 @@ export default function TravelDetailMapClient({
     return () => {
       cancelled = true;
     };
-  }, [map.gpx]);
+  }, [map.gpx, map.kml, map.kmz]);
 
   const trackLatLngs = useMemo(() => extractLatLngsFromTrack(track), [track]);
 
@@ -135,7 +174,7 @@ export default function TravelDetailMapClient({
       />
       {track && (
         <GeoJSON
-          key={map.gpx}
+          key={map.gpx || map.kml || map.kmz}
           data={track}
           style={() => ({
             color: "#14b8a6",

@@ -19,6 +19,8 @@ export interface TravelMapPoint {
 
 export interface TravelMapData {
   gpx?: string;
+  kml?: string;
+  kmz?: string;
   points?: TravelMapPoint[];
 }
 
@@ -153,6 +155,14 @@ function parseMap(rawMap: unknown): Travel["map"] {
     typeof mapObject.gpx === "string" && mapObject.gpx.trim().length > 0
       ? mapObject.gpx
       : undefined;
+  const kml =
+    typeof mapObject.kml === "string" && mapObject.kml.trim().length > 0
+      ? mapObject.kml
+      : undefined;
+  const kmz =
+    typeof mapObject.kmz === "string" && mapObject.kmz.trim().length > 0
+      ? mapObject.kmz
+      : undefined;
 
   const pointsRaw = mapObject.points;
   const points = Array.isArray(pointsRaw)
@@ -161,12 +171,14 @@ function parseMap(rawMap: unknown): Travel["map"] {
         .filter((point): point is TravelMapPoint => Boolean(point))
     : undefined;
 
-  if (!gpx && (!points || points.length === 0)) {
+  if (!gpx && !kml && !kmz && (!points || points.length === 0)) {
     return undefined;
   }
 
   return {
     gpx,
+    kml,
+    kmz,
     points,
   };
 }
