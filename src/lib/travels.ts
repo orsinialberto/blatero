@@ -3,6 +3,7 @@ import path from "path";
 import matter from "gray-matter";
 import { remark } from "remark";
 import html from "remark-html";
+import remarkBreaks from "remark-breaks";
 
 export interface TravelCoords {
   lat: number;
@@ -73,7 +74,7 @@ function parseTravelFromFile(slug: string): Travel {
   const filePath = path.join(travelsDirectory, `${slug}.md`);
   const fileContent = fs.readFileSync(filePath, "utf-8");
   const { data, content } = matter(fileContent);
-  const processedContent = remark().use(html).processSync(content);
+  const processedContent = remark().use(remarkBreaks).use(html).processSync(content);
 
   if (!data.title || !data.date || !data.description || !data.coverImage) {
     throw new Error(`Missing mandatory fields in travel ${slug}`);
