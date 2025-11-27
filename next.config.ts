@@ -13,7 +13,6 @@ const nextConfig: NextConfig = {
     ],
   },
   devIndicators: false,
-  basePath: '/blog', 
   trailingSlash: true,
 };
 

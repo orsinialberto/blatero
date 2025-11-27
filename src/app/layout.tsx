@@ -40,7 +40,7 @@ const poiretOne = Poiret_One({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://orsinialberto.github.io/blog"),
+  metadataBase: new URL("https://albertorsini.it"),
   title: {
     default: "Diario di Viaggio",
     template: "%s · Diario di Viaggio",
