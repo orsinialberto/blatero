@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Comforter, Klee_One, Poiret_One } from "next/font/google";
+import { Geist, Geist_Mono, Comforter, Klee_One, Poiret_One, Schoolbell } from "next/font/google";
 
 import "./globals.css";
 import { Footer } from "@/components/Footer";
@@ -40,6 +40,14 @@ const poiretOne = Poiret_One({
   preload: true,
 });
 
+const schoolbell = Schoolbell({
+  variable: "--font-schoolbell",
+  subsets: ["latin"],
+  weight: ["400"],
+  display: "swap",
+  preload: true,
+});
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://albertorsini.it"),
   title: {
@@ -58,7 +66,7 @@ export default function RootLayout({
   return (
     <html lang="it">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${comforter.variable} ${kleeOne.variable} ${poiretOne.variable} bg-brand-background antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${comforter.variable} ${kleeOne.variable} ${poiretOne.variable} ${schoolbell.variable} bg-brand-background antialiased`}
       >
         <div className="flex min-h-screen flex-col">
           <Header />

@@ -13,7 +13,7 @@ export default async function HomePage() {
   return (
     <div className="space-y-16">
       {/* Hero Section Full Width */}
-      <section className="relative -mx-4 -mt-[73px] h-[85vh] min-h-[600px] md:-mx-8 lg:-mx-12">
+      <section className="relative -mx-4 -mt-[73px] h-screen max-h-screen md:-mx-8 lg:-mx-12">
         <div className="relative h-full w-full">
           <Image
             src={withBasePath("/images/home-hero.jpg")}
@@ -40,8 +40,52 @@ export default async function HomePage() {
       </section>
 
       <div className="container space-y-16">
+        {/* About Preview Section */}
+        <section className="relative">
+          <div className="relative">
+            {/* Image - Limited width */}
+            <div className="relative h-[400px] w-full lg:h-[600px] lg:max-w-3xl">
+              <Image
+                src={withBasePath("/images/moto-profile.JPG")}
+                alt="Alberto in moto"
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 48rem"
+              />
+            </div>
 
-      <section className="space-y-6">
+            {/* Text Box - Overlapping on right, centered vertically */}
+            <div className="relative -mt-20 z-10 mx-auto w-full max-w-2xl bg-white px-8 py-14 shadow-card lg:absolute lg:right-8 lg:top-1/2 lg:-translate-y-1/2 lg:mt-0 lg:px-10 lg:py-18">
+              <div className="space-y-10 text-center">
+                <div className="space-y-6">
+                  <h2 className="font-klee text-4xl font-normal text-brand-primary">
+                   Metto lo zaino, seguo la strada e mi perdo
+                  </h2>
+                  <div className="space-y-6 text-brand-muted">
+                    <p className="font-klee text-base leading-relaxed">
+                     Ciao sono Alberto, e da qualche anno ho scoperto che la mia felicità pesa più o meno quanto uno zaino.
+                     Cammino, viaggio in moto, esploro quando posso e come posso. 
+                     Amo perdermi nei sentieri, nelle strade secondarie, nei mercati affollati e nei tramonti che arrivano quando meno te li aspetti.
+                    </p>
+                    <p className="font-klee text-base leading-relaxed">
+                     Scrivo questo blog per fermare un po’ di quella libertà che il viaggio regala, 
+                     per ricordarmi ciò che ho visto e condividere ciò che mi è rimasto dentro.
+                     Perché la voglia di partire — quella sì — non passa mai.
+                    </p>
+                  </div>
+                </div>
+                <Link
+                  href="/about"
+                  className="inline-flex w-fit items-center justify-center bg-brand-primary px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-brand-secondary"
+                >
+                  Scopri di più su di me
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="space-y-6">
         <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.3em] text-brand-muted">
@@ -56,7 +100,7 @@ export default async function HomePage() {
           </Link>
         </div>
 
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           {highlights.map((travel) => (
             <TravelCard key={travel.slug} travel={travel} />
           ))}

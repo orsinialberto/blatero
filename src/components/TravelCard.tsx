@@ -9,47 +9,31 @@ interface TravelCardProps {
 }
 
 export function TravelCard({ travel }: TravelCardProps) {
-  const highlights = [
-    travel.location,
-    travel.duration,
-    travel.totalKilometers ? `${travel.totalKilometers} km` : undefined,
-  ].filter(Boolean).join(" · ");
+  const titleColorClass =
+    travel.heroTitleVariant === "dark" ? "text-slate-900" : "text-white";
 
   return (
-    <article className="flex flex-col overflow-hidden rounded-3xl bg-white shadow-card transition hover:-translate-y-1">
-      <div className="relative h-60 w-full">
+    <Link href={`/viaggi/${travel.slug}`}>
+      <article className="group relative aspect-[4/3] overflow-hidden bg-white transition-transform hover:scale-[1.02]">
         <Image
           src={travel.coverImage}
           alt={travel.title}
           fill
-          className="object-cover"
+          className="object-cover transition-transform duration-700 group-hover:scale-110"
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         />
-      </div>
-      <div className="flex flex-1 flex-col p-6">
-        <p className="text-sm font-semibold uppercase tracking-[0.2em] text-brand-muted">
-          {formatDateRange(travel.date, travel.endDate)}
-        </p>
-        <Link href={`/viaggi/${travel.slug}`} className="mt-2 text-2xl font-semibold text-brand-primary">
-          {travel.title}
-        </Link>
-        <div className="mt-3 flex flex-wrap gap-2">
-          {travel.tags.map((tag) => (
-            <Link
-              key={tag}
-              href={`/viaggi?tag=${encodeURIComponent(tag)}`}
-              className="rounded-full bg-brand-background px-3 py-1 text-xs font-semibold text-brand-muted transition hover:text-brand-secondary"
-            >
-              #{tag}
-            </Link>
-          ))}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+        <div className="absolute bottom-0 left-0 right-0 p-6">
+          <div className="h-[72px] flex flex-col justify-end">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/70 mb-1">
+              {formatDateRange(travel.date, travel.endDate)}
+            </p>
+            <h3 className={`text-2xl font-semibold leading-tight line-clamp-2 ${titleColorClass}`}>
+              {travel.title}
+            </h3>
+          </div>
         </div>
-        <p className="font-klee mt-3 text-base text-brand-muted">{travel.description}</p>
-        <div className="mt-auto flex items-center justify-between pt-6 text-sm font-semibold text-brand-secondary">
-          <span>{highlights || "In aggiornamento"}</span>
-          <Link href={`/viaggi/${travel.slug}`}>Leggi →</Link>
-        </div>
-      </div>
-    </article>
+      </article>
+    </Link>
   );
 }

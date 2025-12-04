@@ -19,6 +19,7 @@ const config: Config = {
         comforter: ["var(--font-comforter)", "Brush Script MT", "cursive"],
         klee: ["var(--font-klee-one)", "cursive"],
         poiret: ["var(--font-poiret-one)", "sans-serif"],
+        schoolbell: ["var(--font-schoolbell)", "cursive"],
       },
       boxShadow: {
         card: "0 25px 45px rgba(15, 23, 42, 0.08)",
