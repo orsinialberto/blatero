@@ -13,7 +13,7 @@ export default async function HomePage() {
   return (
     <div className="space-y-16">
       {/* Hero Section Full Width */}
-      <section className="relative -mx-4 -mt-[73px] h-screen max-h-screen md:-mx-8 lg:-mx-12">
+      <section className="relative -mt-[73px] h-[calc(100vh+73px)]">
         <div className="relative h-full w-full">
           <Image
             src={withBasePath("/images/home-hero.jpg")}
@@ -42,44 +42,42 @@ export default async function HomePage() {
       <div className="container space-y-16">
         {/* About Preview Section */}
         <section className="relative">
-          <div className="relative">
-            {/* Image - Limited width */}
-            <div className="relative h-[400px] w-full lg:h-[600px] lg:max-w-3xl">
+          <div className="relative flex flex-col lg:flex-row">
+            {/* Image */}
+            <div className="relative w-full lg:w-7/12 xl:w-7/12 aspect-[4/3]">
               <Image
                 src={withBasePath("/images/moto-profile.JPG")}
                 alt="Alberto in moto"
                 fill
                 className="object-cover"
-                sizes="(max-width: 1024px) 100vw, 48rem"
+                sizes="(max-width: 1024px) 100vw, 50vw"
               />
             </div>
 
-            {/* Text Box - Overlapping on right, centered vertically */}
-            <div className="relative -mt-20 z-10 mx-auto w-full max-w-2xl bg-white px-8 py-14 shadow-card lg:absolute lg:right-8 lg:top-1/2 lg:-translate-y-1/2 lg:mt-0 lg:px-10 lg:py-18">
-              <div className="space-y-10 text-center">
-                <div className="space-y-6">
-                  <h2 className="font-klee text-4xl font-normal text-brand-primary">
-                   Metto lo zaino, seguo la strada e mi perdo
-                  </h2>
-                  <div className="space-y-6 text-brand-muted">
-                    <p className="font-klee text-base leading-relaxed">
-                     Ciao sono Alberto, e da qualche anno ho scoperto che la mia felicità pesa più o meno quanto uno zaino.
-                     Cammino, viaggio in moto, esploro quando posso e come posso. 
-                     Amo perdermi nei sentieri, nelle strade secondarie, nei mercati affollati e nei tramonti che arrivano quando meno te li aspetti.
-                    </p>
-                    <p className="font-klee text-base leading-relaxed">
-                     Scrivo questo blog per fermare un po’ di quella libertà che il viaggio regala, 
-                     per ricordarmi ciò che ho visto e condividere ciò che mi è rimasto dentro.
-                     Perché la voglia di partire — quella sì — non passa mai.
-                    </p>
-                  </div>
+            {/* Text Box */}
+            <div className="relative w-full bg-white px-8 py-8 shadow-card lg:absolute lg:right-8 lg:top-1/2 lg:-translate-y-1/2 lg:w-1/2 lg:px-12 lg:py-5 xl:absolute xl:right-8 xl:top-1/2 xl:-translate-y-1/2 xl:w-1/2 xl:px-12 xl:py-12">
+              <div className="space-y-6 text-center">
+                <h2 className="font-klee text-3xl font-normal text-brand-primary">
+                 Metto lo zaino, seguo la strada e mi perdo
+                </h2>
+                <div className="space-y-4 text-brand-muted">
+                  <p className="font-klee text-base leading-relaxed">
+                   Ciao sono Alberto, e da qualche anno ho scoperto che la mia felicità pesa più o meno quanto uno zaino.
+                   Cammino, viaggio in moto, esploro quando posso e come posso. 
+                  </p>
+                  <p className="font-klee text-base leading-relaxed">
+                   Scrivo questo blog per fermare un po' di quella libertà che il viaggio regala, 
+                   per ricordarmi ciò che ho visto e condividere ciò che mi è rimasto dentro.
+                  </p>
                 </div>
-                <Link
-                  href="/about"
-                  className="inline-flex w-fit items-center justify-center bg-brand-primary px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-brand-secondary"
-                >
-                  Scopri di più su di me
-                </Link>
+                <div className="flex justify-center">
+                  <Link
+                    href="/about"
+                    className="inline-flex w-fit items-center justify-center bg-brand-primary px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-brand-secondary"
+                  >
+                    Scopri di più su di me
+                  </Link>
+                </div>
               </div>
             </div>
           </div>

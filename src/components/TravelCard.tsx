@@ -24,7 +24,7 @@ export function TravelCard({ travel }: TravelCardProps) {
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
         <div className="absolute bottom-0 left-0 right-0 p-6">
-          <div className="h-[72px] flex flex-col justify-end">
+          <div className="flex flex-col justify-center">
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/70 mb-1">
               {formatDateRange(travel.date, travel.endDate)}
             </p>
