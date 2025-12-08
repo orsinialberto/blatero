@@ -77,7 +77,7 @@ export default async function HomePage() {
                     href="/about"
                     className="inline-flex w-fit items-center justify-center bg-sky-800 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-sky-700"
                   >
-                    Scopri di più su di me
+                    Chi sono
                   </Link>
                 </div>
               </div>
