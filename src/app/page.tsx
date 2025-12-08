@@ -106,9 +106,11 @@ export default async function HomePage() {
           ))}
         </div>
       </section>
+      </div>
 
-        <TravelStats stats={stats} />
+      <TravelStats stats={stats} />
 
+      <div className="container space-y-16">
         <TravelMap />
       </div>
     </div>

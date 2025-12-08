@@ -26,7 +26,7 @@ export function TravelStats({ stats }: TravelStatsProps) {
   ];
 
   return (
-    <section className="bg-sky-800 py-12 w-full">
+    <section className="bg-sky-800 py-20 w-full">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
           {statsItems.map((item, index) => (
