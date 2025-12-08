@@ -14,7 +14,7 @@ export function TravelCard({ travel }: TravelCardProps) {
 
   return (
     <Link href={`/viaggi/${travel.slug}`}>
-      <article className="group relative aspect-[4/3] overflow-hidden bg-white transition-transform hover:scale-[1.02]">
+      <article className="group relative aspect-square overflow-hidden bg-white transition-transform hover:scale-[1.02]">
         <Image
           src={travel.coverImage}
           alt={travel.title}

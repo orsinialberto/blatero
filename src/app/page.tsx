@@ -8,7 +8,7 @@ import { withBasePath } from "@/lib/paths";
 
 export default async function HomePage() {
   const travels = await getAllTravels();
-  const highlights = travels.slice(0, 3);
+  const highlights = travels.slice(0, 4);
 
   return (
     <div className="space-y-16">
@@ -98,7 +98,7 @@ export default async function HomePage() {
           </Link>
         </div>
 
-        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-2 md:grid-cols-2 lg:grid-cols-4">
           {highlights.map((travel) => (
             <TravelCard key={travel.slug} travel={travel} />
           ))}

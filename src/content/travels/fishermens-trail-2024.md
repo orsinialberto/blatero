@@ -121,8 +121,6 @@ timeline:
     km: 10.9
 ---
 
-# Il viaggio
-
 ## La Rota Vicentina – Il Cammino dei Pescatori
 
 Prima di partire mi ero informato su lunghezze e dislivelli e il pensiero era stato:  
