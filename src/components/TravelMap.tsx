@@ -16,7 +16,7 @@ export async function TravelMap() {
   }
 
   return (
-    <section className="bg-white py-16">
+    <section className="bg-white pt-12 pb-16">
       <div className="container mx-auto max-w-7xl px-4">
         <div className="space-y-6">
           <div className="space-y-2">
@@ -24,7 +24,7 @@ export async function TravelMap() {
               Mappa
             </p>
           </div>
-          <div className="h-[420px] w-full overflow-hidden bg-brand-background">
+          <div className="h-[420px] w-full overflow-hidden rounded-xl bg-brand-background">
             <TravelMapLazy travels={travelsWithCoords} />
           </div>
         </div>

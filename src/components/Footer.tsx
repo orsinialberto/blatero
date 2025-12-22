@@ -1,6 +1,8 @@
 import Link from "next/link";
 
 export function Footer() {
+  const currentYear = new Date().getFullYear();
+  
   const socialLinks = [
     {
       name: "Instagram",
@@ -22,7 +24,7 @@ export function Footer() {
     },
     {
       name: "Komoot",
-      url: "https://www.komoot.com/it-it/user/4517229241749", 
+      url: "https://www.komoot.com/it-it/user/4517229241749",
       icon: (
         <svg
           className="h-5 w-5"
@@ -42,40 +44,81 @@ export function Footer() {
     },
   ];
 
+  const quickLinks = [
+    { href: "/", label: "Home" },
+    { href: "/viaggi", label: "Tutti i Viaggi" },
+    { href: "/galleria", label: "Galleria Foto" },
+    { href: "/about", label: "Chi Sono" },
+  ];
+
   return (
-    <footer className="border-t border-slate-200 bg-white/80">
-      <div className="container flex flex-col gap-6 py-10 md:flex-row md:items-center md:justify-between">
-        <div>
-          <p className="text-lg font-semibold text-brand-primary">Diario di Viaggio</p>
-          <p className="text-sm text-brand-muted">
-            © {new Date().getFullYear()} · Tutti i diritti riservati
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 md:flex-row md:items-center md:gap-6">
-          <div className="flex gap-5 text-sm font-medium text-brand-muted">
-            <Link href="/viaggi" className="transition hover:text-brand-secondary">
-              Tutti i viaggi
-            </Link>
-            <Link href="/about" className="transition hover:text-brand-secondary">
-              Contatti
-            </Link>
+    <footer className="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+      <div className="container py-12 md:py-16">
+        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-12 lg:gap-8">
+          
+          {/* Brand & Bio Section */}
+          <div className="lg:col-span-5">
+            <p className="font-comforter text-3xl font-normal tracking-tight text-white md:text-4xl mb-4">
+              Diario di Viaggio
+            </p>
+            <p className="text-sm leading-relaxed text-slate-300 max-w-md">
+              Storie autentiche di viaggi zaino in spalla, trekking e avventure in moto. 
+              Scopri itinerari, consigli pratici e ispirazioni per il tuo prossimo viaggio.
+            </p>
           </div>
-          <div className="flex items-center gap-3">
-            <div className="flex gap-3">
+
+          {/* Quick Links */}
+          <div className="lg:col-span-3">
+            <h3 className="mb-4 text-xs font-semibold uppercase tracking-wider text-slate-400">
+              Navigazione
+            </h3>
+            <ul className="space-y-2.5">
+              {quickLinks.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="text-sm text-slate-300 transition hover:text-brand-accent"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Social & Connect */}
+          <div className="lg:col-span-4">
+            <h3 className="mb-4 text-xs font-semibold uppercase tracking-wider text-slate-400">
+              Seguimi
+            </h3>
+            <p className="mb-4 text-sm text-slate-300">
+              Segui le mie avventure in tempo reale e scopri i miei itinerari.
+            </p>
+            <div className="flex flex-wrap gap-3">
               {socialLinks.map((social) => (
                 <a
                   key={social.name}
                   href={social.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-brand-muted transition hover:text-brand-secondary"
+                  className="group flex items-center gap-2 rounded-lg border border-slate-700 bg-slate-800/50 px-4 py-2.5 text-sm font-medium text-slate-300 backdrop-blur-sm transition hover:border-brand-accent hover:bg-brand-accent/10 hover:text-white"
                   aria-label={social.name}
                 >
-                  {social.icon}
+                  <span className="transition group-hover:scale-110">
+                    {social.icon}
+                  </span>
+                  <span>{social.name}</span>
                 </a>
               ))}
             </div>
           </div>
+        </div>
+
+        {/* Bottom Bar */}
+        <div className="mt-12 border-t border-slate-700 pt-8 text-center">
+          <p className="text-xs text-slate-400">
+            © {currentYear} Diario di Viaggio · Tutti i diritti riservati
+          </p>
         </div>
       </div>
     </footer>

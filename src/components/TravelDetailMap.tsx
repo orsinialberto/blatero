@@ -15,7 +15,7 @@ export function TravelDetailMap({ map, coords, title }: TravelDetailMapProps) {
           Traccia del viaggio
         </p>
       </div>
-      <div className="h-[420px] w-full overflow-hidden bg-brand-background">
+      <div className="h-[420px] w-full overflow-hidden rounded-xl bg-brand-background">
         <TravelDetailMapLazy map={map} fallbackCoords={coords} title={title} />
       </div>
     </section>

@@ -5,22 +5,24 @@ interface SectionHeaderProps {
   title?: string;
   linkText?: string;
   linkHref?: string;
+  dark?: boolean;
 }
 
 export function SectionHeader({ 
   label, 
   title, 
   linkText, 
-  linkHref 
+  linkHref,
+  dark = false,
 }: SectionHeaderProps) {
   return (
     <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
       <div>
-        <p className="text-xs font-semibold uppercase tracking-[0.3em] text-brand-muted">
+        <p className={`text-xs font-semibold uppercase tracking-[0.3em] ${dark ? 'text-slate-400' : 'text-brand-muted'}`}>
           {label}
         </p>
         {title && (
-          <h2 className="text-4xl font-semibold text-brand-primary mt-2">
+          <h2 className={`text-4xl font-semibold mt-2 ${dark ? 'text-white' : 'text-brand-primary'}`}>
             {title}
           </h2>
         )}
@@ -28,7 +30,7 @@ export function SectionHeader({
       {linkText && linkHref && (
         <Link
           href={linkHref}
-          className="text-sm font-semibold text-brand-secondary hover:underline"
+          className={`text-sm font-semibold hover:underline ${dark ? 'text-slate-300 hover:text-white' : 'text-brand-secondary'}`}
         >
           {linkText} →
         </Link>

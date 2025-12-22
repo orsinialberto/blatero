@@ -17,31 +17,74 @@ export function GalleryPreviewSection({ photos }: GalleryPreviewSectionProps) {
     return null;
   }
 
-  return (
-    <section className="space-y-6">
-      <SectionHeader
-        label="Galleria fotografica"
-        linkText="Vedi tutte le foto"
-        linkHref="/galleria"
-      />
+  const [mainPhoto, ...otherPhotos] = photos;
 
-      <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
-        {photos.map((photo, i) => (
+  return (
+    <section className="relative overflow-hidden bg-slate-900 pt-16 pb-16">
+      {/* Background Image */}
+      <div className="absolute inset-0">
+        <Image
+          src="/images/gallery.JPG"
+          alt="Montagne panorama"
+          fill
+          className="object-cover opacity-30"
+          sizes="100vw"
+          priority
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-900/80 via-slate-900/70 to-slate-900/80" />
+      </div>
+
+      {/* Content */}
+      <div className="container relative space-y-8">
+        <SectionHeader
+          label="Galleria fotografica"
+          linkText="Vedi tutte le foto"
+          linkHref="/galleria"
+          dark={true}
+        />
+
+        <div className="mx-auto max-w-6xl space-y-4">
+          {/* Main Photo - Large */}
           <Link
-            key={`${photo.url}-${i}`}
             href="/galleria"
-            className="relative aspect-[4/3] overflow-hidden hover:scale-[1.02] transition-transform group"
+            className="relative block aspect-[21/9] overflow-hidden rounded-xl shadow-2xl hover:scale-[1.01] transition-transform duration-300 group"
           >
             <Image
-              src={photo.url}
-              alt={photo.travelTitle}
+              src={mainPhoto.url}
+              alt={mainPhoto.travelTitle}
               fill
               className="object-cover"
-              sizes="(max-width: 768px) 50vw, 33vw"
+              sizes="(max-width: 768px) 100vw, 90vw"
+              priority
             />
-            <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            <div className="absolute bottom-0 left-0 right-0 p-6 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+              <p className="text-white text-lg font-medium">{mainPhoto.travelTitle}</p>
+            </div>
           </Link>
-        ))}
+
+          {/* Thumbnail Grid - Small photos below */}
+          {otherPhotos.length > 0 && (
+            <div className="grid grid-cols-3 md:grid-cols-5 gap-4">
+              {otherPhotos.map((photo, i) => (
+                <Link
+                  key={`${photo.url}-${i}`}
+                  href="/galleria"
+                  className="relative aspect-square overflow-hidden rounded-lg shadow-lg hover:scale-105 hover:shadow-xl transition-all duration-300 group"
+                >
+                  <Image
+                    src={photo.url}
+                    alt={photo.travelTitle}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 33vw, 20vw"
+                  />
+                  <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                </Link>
+              ))}
+            </div>
+          )}
+        </div>
       </div>
     </section>
   );

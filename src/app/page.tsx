@@ -6,23 +6,33 @@ import { TravelMap } from "@/components/TravelMap";
 import { TravelStats } from "@/components/TravelStats";
 import { getAllTravels, getTravelStats } from "@/lib/travels";
 
+// Fisher-Yates shuffle algorithm for random array
+function shuffleArray<T>(array: T[]): T[] {
+  const shuffled = [...array];
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
+  return shuffled;
+}
+
 export default async function HomePage() {
   const travels = await getAllTravels();
   const highlights = travels.slice(0, 4);
   const stats = getTravelStats();
 
-  // Raccogli foto per la gallery preview (prime 6 foto dai viaggi più recenti)
-  const galleryPreview = travels
+  // Raccogli tutte le foto dai viaggi e selezionane 6 random
+  const allPhotos = travels
     .filter((travel) => travel.gallery && travel.gallery.length > 0)
-    .slice(0, 2) // Prendi i 2 viaggi più recenti con foto
     .flatMap((travel) =>
-      (travel.gallery || []).slice(0, 3).map((photo) => ({
+      (travel.gallery || []).map((photo) => ({
         url: photo,
         travelTitle: travel.title,
         travelSlug: travel.slug,
       }))
-    )
-    .slice(0, 6);
+    );
+  
+  const galleryPreview = shuffleArray(allPhotos).slice(0, 6);
 
   return (
     <div>
@@ -37,13 +47,9 @@ export default async function HomePage() {
         <TravelStats stats={stats} />
       </div>
 
-      <div className="container mt-16">
-        <GalleryPreviewSection photos={galleryPreview} />
-      </div>
+      <GalleryPreviewSection photos={galleryPreview} />
 
-      <div className="mt-16">
-        <TravelMap />
-      </div>
+      <TravelMap />
     </div>
   );
 }
