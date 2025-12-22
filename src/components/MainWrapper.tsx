@@ -7,7 +7,7 @@ export function MainWrapper({ children }: { children: React.ReactNode }) {
   const isHomePage = pathname === "/";
 
   return (
-    <main className={`flex-1 pb-16 ${isHomePage ? "pt-0" : "pt-10"}`}>
+    <main className={`flex-1 ${isHomePage ? "pt-0 pb-0" : "pt-10 pb-16"}`}>
       {children}
     </main>
   );

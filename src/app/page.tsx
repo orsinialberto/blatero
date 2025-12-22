@@ -25,18 +25,23 @@ export default async function HomePage() {
     .slice(0, 6);
 
   return (
-    <div className="space-y-16">
+    <div>
       <HeroSection />
 
-      <div className="container space-y-16">
+      <div className="container mt-16">
         <AboutPreviewSection />
-        <TravelsHighlightSection travels={highlights} />
       </div>
 
-      <TravelStats stats={stats} />
+      <div className="mt-16">
+        <TravelsHighlightSection travels={highlights} />
+        <TravelStats stats={stats} />
+      </div>
 
-      <div className="container space-y-16">
+      <div className="container mt-16">
         <GalleryPreviewSection photos={galleryPreview} />
+      </div>
+
+      <div className="mt-16">
         <TravelMap />
       </div>
     </div>

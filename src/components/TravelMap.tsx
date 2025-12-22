@@ -16,14 +16,18 @@ export async function TravelMap() {
   }
 
   return (
-    <section className="space-y-4 bg-white p-8 shadow-card">
-      <div className="space-y-2">
-        <p className="text-xs font-semibold uppercase tracking-[0.3em] text-brand-muted">
-          Mappa
-        </p>
-      </div>
-      <div className="h-[420px] w-full overflow-hidden bg-brand-background">
-        <TravelMapLazy travels={travelsWithCoords} />
+    <section className="bg-white py-16">
+      <div className="container mx-auto max-w-7xl px-4">
+        <div className="space-y-6">
+          <div className="space-y-2">
+            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-brand-muted">
+              Mappa
+            </p>
+          </div>
+          <div className="h-[420px] w-full overflow-hidden bg-brand-background">
+            <TravelMapLazy travels={travelsWithCoords} />
+          </div>
+        </div>
       </div>
     </section>
   );
