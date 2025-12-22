@@ -18,7 +18,7 @@ export function AboutPreviewSection() {
         </div>
 
         {/* Text Box */}
-        <div className="relative w-full bg-white px-8 py-8 shadow-card lg:absolute lg:right-8 lg:top-1/2 lg:-translate-y-1/2 lg:w-1/2 lg:px-12 lg:py-5 xl:absolute xl:right-8 xl:top-1/2 xl:-translate-y-1/2 xl:w-1/2 xl:px-12 xl:py-12">
+        <div className="relative w-full bg-white px-8 py-10 shadow-card lg:absolute lg:right-8 lg:top-1/2 lg:-translate-y-1/2 lg:w-1/2 lg:px-12 lg:py-12 xl:absolute xl:right-8 xl:top-1/2 xl:-translate-y-1/2 xl:w-1/2 xl:px-12 xl:py-12">
           <div className="space-y-6 text-center">
             <h2 className="font-klee text-3xl font-normal text-brand-primary">
               Metto lo zaino, seguo la strada e mi perdo

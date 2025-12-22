@@ -8,8 +8,8 @@ interface TravelsHighlightSectionProps {
 
 export function TravelsHighlightSection({ travels }: TravelsHighlightSectionProps) {
   return (
-    <section className="bg-white py-16">
-      <div className="container mx-auto max-w-7xl px-4">
+    <section className="bg-white py-20">
+      <div className="container mx-auto max-w-6xl px-4">
         <div className="space-y-6">
           <SectionHeader
             label="Ultime pubblicazioni"

@@ -1,6 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Comforter&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Klee+One:wght@400;600&display=swap');
 
+:root {
+  --font-klee-one: 'Klee One', cursive;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

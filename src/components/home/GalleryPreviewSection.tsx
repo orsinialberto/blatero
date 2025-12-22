@@ -20,7 +20,7 @@ export function GalleryPreviewSection({ photos }: GalleryPreviewSectionProps) {
   const [mainPhoto, ...otherPhotos] = photos;
 
   return (
-    <section className="relative overflow-hidden bg-slate-900 pt-16 pb-16">
+    <section className="relative overflow-hidden bg-slate-900 py-20">
       {/* Background Image */}
       <div className="absolute inset-0">
         <Image
@@ -35,7 +35,7 @@ export function GalleryPreviewSection({ photos }: GalleryPreviewSectionProps) {
       </div>
 
       {/* Content */}
-      <div className="container relative space-y-8">
+      <div className="container relative space-y-8 mx-auto max-w-6xl px-4">
         <SectionHeader
           label="Galleria fotografica"
           linkText="Vedi tutte le foto"
@@ -43,7 +43,7 @@ export function GalleryPreviewSection({ photos }: GalleryPreviewSectionProps) {
           dark={true}
         />
 
-        <div className="mx-auto max-w-6xl space-y-4">
+        <div className="space-y-4">
           {/* Main Photo - Large */}
           <Link
             href="/galleria"

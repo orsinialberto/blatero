@@ -38,14 +38,15 @@ export default async function HomePage() {
     <div>
       <HeroSection />
 
-      <div className="container mt-16">
+      <div className="container mt-24">
         <AboutPreviewSection />
       </div>
 
-      <div className="mt-16">
-        <TravelsHighlightSection travels={highlights} />
+      <div className="mt-24">
         <TravelStats stats={stats} />
       </div>
+
+      <TravelsHighlightSection travels={highlights} />
 
       <GalleryPreviewSection photos={galleryPreview} />
 
