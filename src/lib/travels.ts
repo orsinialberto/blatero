@@ -5,6 +5,7 @@ import { remark } from "remark";
 import html from "remark-html";
 import remarkBreaks from "remark-breaks";
 import { CONTINENT_TAGS, isContinentTag } from "@/config/continents";
+import { visitedCities } from "@/config/visitedCities";
 import { isNonEmptyString, isValidNumber, isObject } from "./typeGuards";
 
 export interface TravelCoords {
@@ -281,15 +282,19 @@ export interface TravelStats {
 export function getTravelStats(): TravelStats {
   const travels = ensureCache();
   
-  // Paesi visitati (dalla location)
+  // Paesi visitati (dalla location dei travels + dalle città visitate)
   const countries = new Set<string>();
   travels.forEach((travel) => {
     if (travel.location && travel.location.trim()) {
       countries.add(travel.location.trim());
     }
   });
+  // Aggiungi paesi dalle città visitate
+  visitedCities.forEach((city) => {
+    countries.add(city.country);
+  });
   
-  // Continenti visitati (dai tags)
+  // Continenti visitati (dai tags dei travels + dalle città visitate)
   const continents = new Set<string>();
   travels.forEach((travel) => {
     travel.tags.forEach((tag) => {
@@ -297,6 +302,12 @@ export function getTravelStats(): TravelStats {
         continents.add(tag);
       }
     });
+  });
+  // Aggiungi continenti dalle città visitate
+  visitedCities.forEach((city) => {
+    if (city.continent && isContinentTag(city.continent)) {
+      continents.add(city.continent);
+    }
   });
   
   // Km percorsi nei cammini (solo viaggi con tag "Cammini")

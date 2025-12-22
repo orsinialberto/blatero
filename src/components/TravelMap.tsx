@@ -1,5 +1,6 @@
 import { getAllTravels, type Travel } from "@/lib/travels";
 import { TravelMapLazy } from "@/components/map/TravelMapLazy";
+import { visitedCities } from "@/config/visitedCities";
 
 type TravelWithCoords = Travel & { coords: NonNullable<Travel["coords"]> };
 
@@ -11,7 +12,8 @@ export async function TravelMap() {
   const travels = await getAllTravels();
   const travelsWithCoords = travels.filter(hasCoords);
 
-  if (!travelsWithCoords.length) {
+  // Se non ci sono travels con coordinate, controlla se ci sono città visitate
+  if (!travelsWithCoords.length && !visitedCities.length) {
     return null;
   }
 
@@ -25,7 +27,10 @@ export async function TravelMap() {
             </p>
           </div>
           <div className="h-[600px] w-full overflow-hidden rounded-xl bg-brand-background">
-            <TravelMapLazy travels={travelsWithCoords} />
+            <TravelMapLazy 
+              travels={travelsWithCoords} 
+              visitedCities={visitedCities}
+            />
           </div>
         </div>
       </div>

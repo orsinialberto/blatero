@@ -3,6 +3,7 @@
 import dynamic from "next/dynamic";
 
 import type { Travel } from "@/lib/travels";
+import type { VisitedCity } from "@/config/visitedCities";
 
 const TravelMapClient = dynamic(() => import("./TravelMapClient"), {
   ssr: false,
@@ -15,9 +16,10 @@ const TravelMapClient = dynamic(() => import("./TravelMapClient"), {
 
 interface TravelMapLazyProps {
   travels: Array<Travel & { coords: NonNullable<Travel["coords"]> }>;
+  visitedCities?: VisitedCity[];
 }
 
-export function TravelMapLazy({ travels }: TravelMapLazyProps) {
-  return <TravelMapClient travels={travels} />;
+export function TravelMapLazy({ travels, visitedCities }: TravelMapLazyProps) {
+  return <TravelMapClient travels={travels} visitedCities={visitedCities} />;
 }
 
