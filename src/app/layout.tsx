@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 import "./globals.css";
+import { CookieBanner } from "@/components/CookieBanner";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { MainWrapper } from "@/components/MainWrapper";
@@ -26,6 +27,7 @@ export default function RootLayout({
           <MainWrapper>{children}</MainWrapper>
           <Footer />
         </div>
+        <CookieBanner />
       </body>
     </html>
   );
