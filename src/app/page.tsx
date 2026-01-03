@@ -38,7 +38,7 @@ export default async function HomePage() {
     <div>
       <HeroSection />
 
-      <div className="container mt-24">
+      <div className="mt-24">
         <AboutPreviewSection />
       </div>
 
@@ -46,11 +46,18 @@ export default async function HomePage() {
         <TravelStats stats={stats} />
       </div>
 
-      <TravelsHighlightSection travels={highlights} />
+      <div className="mt-24">
+        <TravelsHighlightSection travels={highlights} />
+      </div>
+      
+      <div className="mt-24">
+        <GalleryPreviewSection photos={galleryPreview} />
+      </div>
 
-      <GalleryPreviewSection photos={galleryPreview} />
+      <div className="mt-24">
+        <TravelMap />
+      </div>
 
-      <TravelMap />
     </div>
   );
 }

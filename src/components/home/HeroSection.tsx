@@ -16,7 +16,7 @@ export function HeroSection() {
         <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/25 to-black/70" />
       </div>
       <div className="absolute inset-0 flex items-center justify-center">
-        <div className="container w-full">
+        <div className="w-full px-4 lg:px-24">
           <div className="mx-auto max-w-3xl space-y-8 text-center text-white/90 animate-in fade-in duration-1000">
             <h1 className="font-comforter text-6xl font-normal leading-[1.1] text-white md:text-7xl lg:text-8xl">
               Quella voglia di partire che non passa mai

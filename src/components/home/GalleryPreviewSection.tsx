@@ -36,7 +36,7 @@ export function GalleryPreviewSection({ photos }: GalleryPreviewSectionProps) {
       </div>
 
       {/* Content */}
-      <div className="container relative space-y-8 mx-auto max-w-6xl px-4">
+      <div className="relative space-y-8 mx-auto px-4 lg:px-24">
         <SectionHeader
           label="Galleria fotografica"
           linkText="Vedi tutte le foto"

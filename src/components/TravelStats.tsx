@@ -27,7 +27,7 @@ export function TravelStats({ stats }: TravelStatsProps) {
 
   return (
     <section className="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 pt-24 pb-24 w-full">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-6xl px-4 lg:px-24">
         <div className="grid grid-cols-2 gap-12 md:grid-cols-4 md:gap-16">
           {statsItems.map((item, index) => (
             <div key={index} className="text-center">

@@ -53,7 +53,7 @@ export function Footer() {
 
   return (
     <footer className="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
-      <div className="container py-12 md:py-16">
+      <div className="py-12 md:py-16 px-4 lg:px-24">
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-12 lg:gap-8">
           
           {/* Brand & Bio Section */}

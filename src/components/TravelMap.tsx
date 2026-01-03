@@ -18,8 +18,8 @@ export async function TravelMap() {
   }
 
   return (
-    <section className="bg-white py-20">
-      <div className="container mx-auto max-w-6xl px-4">
+    <section className="pb-24">
+      <div className="mx-auto px-4 lg:px-24">
         <div className="space-y-6">
           <div className="space-y-2">
             <p className="text-xs font-semibold uppercase tracking-[0.3em] text-brand-muted">

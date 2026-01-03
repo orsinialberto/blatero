@@ -40,7 +40,7 @@ export function Header() {
           : "border-b border-slate-700 bg-slate-900"
       }`}
     >
-      <div className="container flex items-center justify-between pt-5 pb-3">
+      <div className="flex items-center justify-between pt-5 pb-3 px-4 lg:px-24">
         <Link
           href="/"
           className={`font-comforter text-3xl font-normal tracking-tight transition-all hover:opacity-75 md:text-4xl ${
