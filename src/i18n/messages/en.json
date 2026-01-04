@@ -53,8 +53,13 @@
     "travelTimeline": {
       "stagesLabel": "Journey stages"
     },
+    "travelDetailMap": {
+      "trackLabel": "Travel track"
+    },
     "travelNavigationCard": {
-      "comingSoon": "Coming soon."
+      "comingSoon": "Coming soon.",
+      "previousTravel": "Previous travel",
+      "nextTravel": "Next travel"
     },
     "travelGallery": {
       "fullGallery": "Full gallery",

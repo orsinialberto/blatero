@@ -11,6 +11,8 @@ import { getAllTravels, getTravelBySlug } from "@/lib/travels";
 import { getTravelNavigation } from "@/lib/travelNavigation";
 import { optimizeCloudinaryUrl } from "@/lib/imageOptimization";
 import { getLocaleFromParams, getAllLocalizedPaths, createLocalizedPath } from "@/lib/i18n/routing";
+import { getTranslations } from "@/i18n";
+import type { SupportedLocale } from "@/config/locales";
 
 interface TravelPageProps {
   params: Promise<{ locale: string; slug: string }> | { locale: string; slug: string };
@@ -26,8 +28,12 @@ export async function generateMetadata({
   params,
 }: TravelPageProps): Promise<Metadata> {
   const resolvedParams = await params;
+  const locale = await getLocaleFromParams({ locale: resolvedParams.locale });
   const travel = await getTravelBySlug(resolvedParams.slug);
+  const t = getTranslations(locale as SupportedLocale);
 
+  // For now, travel content (title, description) remains in Italian
+  // This can be handled separately when translating travel content
   return {
     title: travel.title,
     description: travel.description,
@@ -45,6 +51,7 @@ export default async function TravelPage({ params }: TravelPageProps) {
   const travel = await getTravelBySlug(resolvedParams.slug);
   const travels = await getAllTravels();
   const { previous: previousTravel, next: nextTravel } = getTravelNavigation(travels, travel.slug);
+  const t = getTranslations(locale as SupportedLocale);
 
   const optimizedCoverImage = optimizeCloudinaryUrl(travel.coverImage, {
     width: 1200,
@@ -129,12 +136,12 @@ export default async function TravelPage({ params }: TravelPageProps) {
       <TravelGallery images={travel.gallery} title={travel.title} />
 
       {travel.map && (
-        <TravelDetailMap map={travel.map} coords={travel.coords} title={travel.title} />
+        <TravelDetailMap map={travel.map} coords={travel.coords} title={travel.title} locale={locale as SupportedLocale} />
       )}
 
       <nav className="grid gap-6 md:grid-cols-2">
-        <TravelNavigationCard label="Viaggio precedente" travel={previousTravel} />
-        <TravelNavigationCard label="Viaggio successivo" travel={nextTravel} align="end" />
+        <TravelNavigationCard label={t.components.travelNavigationCard.previousTravel} travel={previousTravel} locale={locale as SupportedLocale} />
+        <TravelNavigationCard label={t.components.travelNavigationCard.nextTravel} travel={nextTravel} align="end" locale={locale as SupportedLocale} />
       </nav>
     </article>
   );

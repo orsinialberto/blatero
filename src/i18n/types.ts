@@ -66,6 +66,11 @@ export interface TranslationMessages {
     };
     travelNavigationCard: {
       comingSoon: string;
+      previousTravel: string;
+      nextTravel: string;
+    };
+    travelDetailMap: {
+      trackLabel: string;
     };
     travelGallery: {
       fullGallery: string;

@@ -1,24 +1,29 @@
 import { formatDateRange } from "@/lib/dates";
 import type { Travel } from "@/lib/travels";
-import { strings } from "@/config/strings";
 import { LocalizedLink } from "./LocalizedLink";
+import type { SupportedLocale } from "@/config/locales";
+import { getTranslations } from "@/i18n";
 
 interface TravelNavigationCardProps {
   label: string;
   travel?: Travel;
   align?: "start" | "end";
+  locale: SupportedLocale;
 }
 
 export function TravelNavigationCard({ 
   label, 
   travel, 
-  align = "start" 
+  align = "start",
+  locale
 }: TravelNavigationCardProps) {
+  const t = getTranslations(locale);
+  
   if (!travel) {
     return (
       <div className="border border-dashed border-slate-200 bg-white p-6 text-brand-muted">
         {label}
-        <p className="text-sm">{strings.components.travelNavigationCard.comingSoon}</p>
+        <p className="text-sm">{t.components.travelNavigationCard.comingSoon}</p>
       </div>
     );
   }

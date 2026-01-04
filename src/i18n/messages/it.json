@@ -53,8 +53,13 @@
     "travelTimeline": {
       "stagesLabel": "Tappe del cammino"
     },
+    "travelDetailMap": {
+      "trackLabel": "Traccia del viaggio"
+    },
     "travelNavigationCard": {
-      "comingSoon": "Arriverà presto."
+      "comingSoon": "Arriverà presto.",
+      "previousTravel": "Viaggio precedente",
+      "nextTravel": "Viaggio successivo"
     },
     "travelGallery": {
       "fullGallery": "Galleria completa",
