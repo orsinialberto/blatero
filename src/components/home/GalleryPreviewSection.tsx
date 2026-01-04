@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import { SectionHeader } from "@/components/SectionHeader";
 import { optimizeCloudinaryUrl } from "@/lib/imageOptimization";
 import { getTranslations } from "@/i18n";
@@ -18,15 +18,28 @@ interface GalleryPreviewSectionProps {
   locale: SupportedLocale;
 }
 
+// Preload image for faster display
+function preloadImage(src: string): Promise<void> {
+  return new Promise((resolve, reject) => {
+    const img = new window.Image();
+    img.onload = () => resolve();
+    img.onerror = reject;
+    img.src = src;
+  });
+}
+
 export function GalleryPreviewSection({ photos, locale }: GalleryPreviewSectionProps) {
   const t = getTranslations(locale);
   const [selectedPhoto, setSelectedPhoto] = useState<GalleryPhoto | null>(null);
   const [selectedIndex, setSelectedIndex] = useState<number>(0);
+  const [imageLoaded, setImageLoaded] = useState(false);
+  const prefetchedImages = useRef<Set<string>>(new Set());
 
   const goToNext = useCallback(() => {
     setSelectedIndex((prevIndex) => {
       const newIndex = prevIndex + 1 >= photos.length ? 0 : prevIndex + 1;
       setSelectedPhoto(photos[newIndex]);
+      setImageLoaded(false);
       return newIndex;
     });
   }, [photos]);
@@ -35,9 +48,68 @@ export function GalleryPreviewSection({ photos, locale }: GalleryPreviewSectionP
     setSelectedIndex((prevIndex) => {
       const newIndex = prevIndex - 1 < 0 ? photos.length - 1 : prevIndex - 1;
       setSelectedPhoto(photos[newIndex]);
+      setImageLoaded(false);
       return newIndex;
     });
   }, [photos]);
+
+  // Prefetch fullscreen images for adjacent photos when one is selected
+  useEffect(() => {
+    if (!selectedPhoto || photos.length === 0) {
+      return;
+    }
+
+    const prefetchAdjacentImages = async () => {
+      const prevIndex = selectedIndex - 1 >= 0 ? selectedIndex - 1 : photos.length - 1;
+      const nextIndex = selectedIndex + 1 < photos.length ? selectedIndex + 1 : 0;
+
+      const imagesToPrefetch = [
+        { photo: photos[prevIndex], index: prevIndex },
+        { photo: photos[nextIndex], index: nextIndex },
+      ];
+
+      imagesToPrefetch.forEach(({ photo }) => {
+        if (photo && !prefetchedImages.current.has(photo.url)) {
+          const fullscreenUrl = optimizeCloudinaryUrl(photo.url, { width: 1920, quality: 90 });
+          prefetchedImages.current.add(photo.url);
+          preloadImage(fullscreenUrl).catch(() => {
+            // Silently fail if prefetch fails
+          });
+        }
+      });
+    };
+
+    prefetchAdjacentImages();
+  }, [selectedPhoto, selectedIndex, photos]);
+
+  // Prefetch fullscreen image when photo is selected (in background, doesn't block UI)
+  useEffect(() => {
+    if (!selectedPhoto) {
+      setImageLoaded(false);
+      return;
+    }
+
+    const fullscreenUrl = optimizeCloudinaryUrl(selectedPhoto.url, { width: 1920, quality: 90 });
+    
+    // Preload in background if not already prefetched
+    if (!prefetchedImages.current.has(selectedPhoto.url)) {
+      prefetchedImages.current.add(selectedPhoto.url);
+      preloadImage(fullscreenUrl).catch(() => {
+        // Silently fail if prefetch fails
+      });
+    }
+  }, [selectedPhoto]);
+
+  // Prefetch image on hover
+  const handlePhotoHover = useCallback((photo: GalleryPhoto) => {
+    if (!prefetchedImages.current.has(photo.url)) {
+      const fullscreenUrl = optimizeCloudinaryUrl(photo.url, { width: 1920, quality: 90 });
+      prefetchedImages.current.add(photo.url);
+      preloadImage(fullscreenUrl).catch(() => {
+        // Silently fail if prefetch fails
+      });
+    }
+  }, []);
 
   useEffect(() => {
     if (!selectedPhoto) {
@@ -68,6 +140,7 @@ export function GalleryPreviewSection({ photos, locale }: GalleryPreviewSectionP
   const handlePhotoClick = (photo: GalleryPhoto, index: number) => {
     setSelectedPhoto(photo);
     setSelectedIndex(index);
+    setImageLoaded(false);
   };
 
   if (photos.length === 0) {
@@ -106,6 +179,7 @@ export function GalleryPreviewSection({ photos, locale }: GalleryPreviewSectionP
             <button
               type="button"
               onClick={() => handlePhotoClick(mainPhoto, 0)}
+              onMouseEnter={() => handlePhotoHover(mainPhoto)}
               className="relative block w-full aspect-[21/9] overflow-hidden rounded-xl shadow-2xl hover:scale-[1.01] transition-transform duration-300 group cursor-pointer"
             >
               <Image
@@ -130,6 +204,7 @@ export function GalleryPreviewSection({ photos, locale }: GalleryPreviewSectionP
                     key={`${photo.url}-${i}`}
                     type="button"
                     onClick={() => handlePhotoClick(photo, i + 1)}
+                    onMouseEnter={() => handlePhotoHover(photo)}
                     className="relative aspect-square overflow-hidden rounded-lg shadow-lg hover:scale-105 hover:shadow-xl transition-all duration-300 group cursor-pointer"
                   >
                     <Image
@@ -192,15 +267,22 @@ export function GalleryPreviewSection({ photos, locale }: GalleryPreviewSectionP
           )}
 
           <div className="relative max-h-[90vh] max-w-[90vw]">
+            {!imageLoaded && (
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="w-12 h-12 border-4 border-white/30 border-t-white rounded-full animate-spin" />
+              </div>
+            )}
             <Image
               src={optimizeCloudinaryUrl(selectedPhoto.url, { width: 1920, quality: 90 })}
               alt={selectedPhoto.travelTitle}
               width={1920}
               height={1080}
-              className="max-h-[90vh] max-w-[90vw] object-contain"
+              className={`max-h-[90vh] max-w-[90vw] object-contain transition-opacity duration-300 ${imageLoaded ? "opacity-100" : "opacity-0"}`}
               onClick={(e) => e.stopPropagation()}
+              onLoad={() => setImageLoaded(true)}
               quality={90}
               sizes="90vw"
+              priority
             />
           </div>
 
