@@ -89,6 +89,13 @@ export interface TranslationMessages {
       description2: string;
       aboutLink: string;
     };
+    languageSwitcher: {
+      switchTo: string;
+      switchToItalian: string;
+      switchToEnglish: string;
+      currentLanguage: string;
+      language: string;
+    };
   };
   pages: {
     about: {

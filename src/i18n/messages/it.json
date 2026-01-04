@@ -77,6 +77,13 @@
       "description1": "Ciao sono Alberto, e da qualche anno ho scoperto che la mia felicità pesa più o meno quanto uno zaino. Cammino, viaggio in moto, esploro quando posso e come posso.",
       "description2": "Scrivo questo blog per fermare un po' di quella libertà che il viaggio regala, per ricordarmi ciò che ho visto e condividere ciò che mi è rimasto dentro.",
       "aboutLink": "Chi sono"
+    },
+    "languageSwitcher": {
+      "switchTo": "Cambia lingua",
+      "switchToItalian": "Cambia a Italiano",
+      "switchToEnglish": "Switch to English",
+      "currentLanguage": "Lingua corrente",
+      "language": "Lingua"
     }
   },
   "pages": {

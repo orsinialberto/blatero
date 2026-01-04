@@ -77,6 +77,13 @@
       "description1": "Hi, I'm Alberto, and for a few years now I've discovered that my happiness weighs more or less like a backpack. I walk, travel by motorcycle, explore when I can and how I can.",
       "description2": "I write this blog to capture a bit of that freedom that travel gives, to remember what I've seen and share what has stayed with me.",
       "aboutLink": "About me"
+    },
+    "languageSwitcher": {
+      "switchTo": "Switch language",
+      "switchToItalian": "Cambia a Italiano",
+      "switchToEnglish": "Switch to English",
+      "currentLanguage": "Current language",
+      "language": "Language"
     }
   },
   "pages": {
