@@ -65,42 +65,95 @@ export interface Travel {
 }
 
 const travelsDirectory = path.join(process.cwd(), "src", "content", "travels");
-let travelCache: Travel[] | null = null;
+export type Locale = "it" | "en";
+const travelCache = new Map<Locale, Travel[]>();
 
 /**
- * Builds the travel cache by reading all Markdown files.
+ * Gets the filename for a travel based on slug and locale.
  * 
- * Note: Currently processes all .md files. Future implementation should:
- * - Filter by locale (e.g., only .md for Italian, .en.md for English)
- * - Group files by base slug to handle multilingual versions
- * - Validate common fields consistency across language versions
+ * @param slug - Base slug of the travel (without locale extension)
+ * @param locale - Locale code ('it' for Italian, 'en' for English)
+ * @returns Filename with appropriate locale extension
+ */
+function getTravelFileName(slug: string, locale: Locale): string {
+  if (locale === "it") {
+    return `${slug}.md`;
+  }
+  return `${slug}.${locale}.md`;
+}
+
+/**
+ * Extracts the base slug and locale from a filename.
+ * 
+ * @param filename - Markdown filename (e.g., "cambogia-2025.md" or "cambogia-2025.en.md")
+ * @returns Object with base slug and locale, or null if filename doesn't match pattern
+ */
+function parseFilename(filename: string): { slug: string; locale: Locale } | null {
+  // Match pattern: [slug].md or [slug].[locale].md
+  const match = filename.match(/^(.+?)(?:\.(en))?\.md$/);
+  if (!match) {
+    return null;
+  }
+
+  const [, slug, locale] = match;
+  return {
+    slug,
+    locale: (locale as Locale) || "it",
+  };
+}
+
+/**
+ * Builds the travel cache for a specific locale by reading Markdown files.
  * 
  * File naming convention:
  * - [slug].md → Italian (default)
  * - [slug].en.md → English
  * See MARKDOWN_I18N_CONVENTION.md for details.
+ * 
+ * @param locale - Locale to build cache for
+ * @returns Array of Travel objects for the specified locale
  */
-function buildCache(): Travel[] {
+function buildCache(locale: Locale): Travel[] {
   const files = fs.readdirSync(travelsDirectory);
-  const travels = files
-    .filter((file) => file.endsWith(".md"))
-    .map((file) => {
-      // TODO: Extract locale from filename (e.g., .en.md → 'en', .md → 'it')
-      // TODO: Extract base slug (remove locale extension)
-      const slug = file.replace(/\.md$/, "");
-      return parseTravelFromFile(slug);
-    });
+  const travels: Travel[] = [];
 
-  travelCache = sortTravelsByDate(travels);
-  return travelCache;
-}
+  for (const file of files) {
+    if (!file.endsWith(".md")) {
+      continue;
+    }
 
-function ensureCache(): Travel[] {
-  if (!travelCache) {
-    return buildCache();
+    const parsed = parseFilename(file);
+    if (!parsed || parsed.locale !== locale) {
+      continue;
+    }
+
+    try {
+      const travel = parseTravelFromFile(parsed.slug, locale);
+      travels.push(travel);
+    } catch (error) {
+      // Log error but continue processing other files
+      console.error(`Error parsing travel file ${file}:`, error);
+    }
   }
 
-  return travelCache;
+  const sorted = sortTravelsByDate(travels);
+  travelCache.set(locale, sorted);
+  return sorted;
+}
+
+/**
+ * Ensures the cache is built for the specified locale.
+ * 
+ * @param locale - Locale to ensure cache for (defaults to 'it')
+ * @returns Array of Travel objects for the specified locale
+ */
+function ensureCache(locale: Locale = "it"): Travel[] {
+  const cached = travelCache.get(locale);
+  if (cached) {
+    return cached;
+  }
+
+  return buildCache(locale);
 }
 
 /**
@@ -114,16 +167,28 @@ function ensureCache(): Travel[] {
  * - title, description, content, duration, map.points[].description
  * 
  * @param slug - Base slug of the travel (without locale extension)
+ * @param locale - Locale to load ('it' for Italian, 'en' for English, defaults to 'it')
+ * @returns Parsed Travel object
+ * @throws Error if file doesn't exist or mandatory fields are missing
  */
-function parseTravelFromFile(slug: string): Travel {
-  // TODO: Support locale parameter to load [slug].[locale].md files
-  const filePath = path.join(travelsDirectory, `${slug}.md`);
+function parseTravelFromFile(slug: string, locale: Locale = "it"): Travel {
+  const fileName = getTravelFileName(slug, locale);
+  const filePath = path.join(travelsDirectory, fileName);
+
+  if (!fs.existsSync(filePath)) {
+    throw new Error(
+      `Travel file not found: ${fileName} (slug: ${slug}, locale: ${locale})`
+    );
+  }
+
   const fileContent = fs.readFileSync(filePath, "utf-8");
   const { data, content } = matter(fileContent);
   const processedContent = remark().use(remarkBreaks).use(html).processSync(content);
 
   if (!data.title || !data.date || !data.description || !data.coverImage) {
-    throw new Error(`Missing mandatory fields in travel ${slug}`);
+    throw new Error(
+      `Missing mandatory fields in travel ${slug} (locale: ${locale})`
+    );
   }
 
   return {
@@ -272,23 +337,48 @@ function parseTimelineItem(rawItem: unknown): TravelTimelineItem | undefined {
   };
 }
 
-export async function getAllTravels(): Promise<Travel[]> {
-  return ensureCache();
+/**
+ * Gets all travels for a specific locale.
+ * 
+ * @param locale - Locale to get travels for (defaults to 'it' for backward compatibility)
+ * @returns Array of all Travel objects for the specified locale
+ */
+export async function getAllTravels(locale: Locale = "it"): Promise<Travel[]> {
+  return ensureCache(locale);
 }
 
-export async function getTravelBySlug(slug: string): Promise<Travel> {
-  const travels = ensureCache();
+/**
+ * Gets a single travel by slug and locale.
+ * 
+ * @param slug - Base slug of the travel (without locale extension)
+ * @param locale - Locale to load ('it' for Italian, 'en' for English, defaults to 'it')
+ * @returns Travel object for the specified slug and locale
+ * @throws Error if travel is not found
+ */
+export async function getTravelBySlug(
+  slug: string,
+  locale: Locale = "it"
+): Promise<Travel> {
+  const travels = ensureCache(locale);
   const travel = travels.find((item) => item.slug === slug);
 
   if (!travel) {
-    throw new Error(`Travel with slug ${slug} not found`);
+    throw new Error(
+      `Travel with slug ${slug} not found for locale ${locale}`
+    );
   }
 
   return travel;
 }
 
-export function getAllTags(): string[] {
-  const travels = ensureCache();
+/**
+ * Gets all unique tags from travels for a specific locale.
+ * 
+ * @param locale - Locale to get tags for (defaults to 'it' for backward compatibility)
+ * @returns Sorted array of unique tag strings
+ */
+export function getAllTags(locale: Locale = "it"): string[] {
+  const travels = ensureCache(locale);
   const tags = new Set<string>();
   travels.forEach((travel) => {
     travel.tags.forEach((tag) => tags.add(tag));
@@ -297,8 +387,15 @@ export function getAllTags(): string[] {
   return Array.from(tags).sort((a, b) => a.localeCompare(b));
 }
 
-export function getTravelsByTag(tag: string): Travel[] {
-  const travels = ensureCache();
+/**
+ * Gets all travels matching a specific tag for a locale.
+ * 
+ * @param tag - Tag to filter by
+ * @param locale - Locale to filter travels for (defaults to 'it' for backward compatibility)
+ * @returns Array of Travel objects matching the tag
+ */
+export function getTravelsByTag(tag: string, locale: Locale = "it"): Travel[] {
+  const travels = ensureCache(locale);
   const normalized = tag.toLowerCase();
   return travels.filter((travel) =>
     travel.tags.some((travelTag) => travelTag.toLowerCase() === normalized)
@@ -320,8 +417,14 @@ export interface TravelStats {
   brokenShoes: number;
 }
 
-export function getTravelStats(): TravelStats {
-  const travels = ensureCache();
+/**
+ * Gets travel statistics for a specific locale.
+ * 
+ * @param locale - Locale to get stats for (defaults to 'it' for backward compatibility)
+ * @returns TravelStats object with aggregated statistics
+ */
+export function getTravelStats(locale: Locale = "it"): TravelStats {
+  const travels = ensureCache(locale);
   
   // Paesi visitati (dalla location dei travels + dalle città visitate)
   const countries = new Set<string>();
