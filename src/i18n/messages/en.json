@@ -107,7 +107,14 @@
       "heading": "Hi, I'm Alberto",
       "sectionLabel": "About me",
       "travelCompanions": "Travel companions",
-      "contacts": "Contacts"
+      "contacts": "Contacts",
+      "bio1": "Since I set foot on my first Camino – the Portuguese coastal route to Santiago, in 2019 – I haven't stopped. It was love at first... blister. Since then, I try to give myself at least one trip every year, whether it's close to home or on the other side of the world. Just having a backpack on my shoulders and a trail ahead: that's where I'm truly happy.",
+      "bio2": "When I'm not walking, you'll probably find me on my motorcycle, chasing mountain curves and panoramas that open up suddenly like scenes from a movie.",
+      "bio3": "And then there's the more \"wild\" side of me: the one that loves to leave without a precise plan, just with a backpack, some vague ideas and a great desire to discover places, cultures and people completely different from what I'm used to. Traveling is for me a way to feel alive, curious and free.",
+      "companion1": "Iphone 14 Pro",
+      "companion2": "Sony Alpha 6400",
+      "companion3": "Honda CB 650R",
+      "profileImageAlt": "Alberto Orsini"
     }
   }
 }

@@ -119,6 +119,13 @@ export interface TranslationMessages {
       sectionLabel: string;
       travelCompanions: string;
       contacts: string;
+      bio1: string;
+      bio2: string;
+      bio3: string;
+      companion1: string;
+      companion2: string;
+      companion3: string;
+      profileImageAlt: string;
     };
   };
 }
