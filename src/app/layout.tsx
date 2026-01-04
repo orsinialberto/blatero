@@ -1,17 +1,25 @@
 /**
  * Root layout - provides base HTML structure
- * The [locale]/layout.tsx handles locale-specific metadata, lang attribute, and page structure
- * Note: lang attribute is set in [locale]/layout.tsx via html tag
+ * Next.js requires <html> and <body> tags in the root layout
+ * The [locale]/layout.tsx handles locale-specific metadata and page structure
  */
 
 import "./globals.css";
+import { defaultLocale } from "@/config/locales";
+import { fontVariables } from "@/config/fonts";
+import { LangAttributeSetter } from "@/components/LangAttributeSetter";
 
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  // Return children directly - [locale]/layout.tsx provides html/body structure
-  // This is a special pattern for i18n where the nested layout handles html/body
-  return children;
+  return (
+    <html lang={defaultLocale}>
+      <body className={`${fontVariables} bg-brand-background antialiased`}>
+        <LangAttributeSetter />
+        {children}
+      </body>
+    </html>
+  );
 }
