@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { LocalizedLink } from "./LocalizedLink";
 
 interface SectionHeaderProps {
   label: string;
@@ -28,12 +28,12 @@ export function SectionHeader({
         )}
       </div>
       {linkText && linkHref && (
-        <Link
+        <LocalizedLink
           href={linkHref}
           className={`text-sm font-semibold hover:underline ${dark ? 'text-slate-300 hover:text-white' : 'text-brand-secondary'}`}
         >
           {linkText} →
-        </Link>
+        </LocalizedLink>
       )}
     </div>
   );

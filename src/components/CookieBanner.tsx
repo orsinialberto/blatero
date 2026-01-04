@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { strings } from "@/config/strings";
+import { LocalizedLink } from "./LocalizedLink";
 
 const COOKIE_CONSENT_KEY = "cookie-consent";
 
@@ -55,12 +56,12 @@ export function CookieBanner() {
               </p>
               <p className="text-sm text-brand-muted">
                 {strings.components.cookieBanner.description}{" "}
-                <a
+                <LocalizedLink
                   href="/about"
                   className="text-brand-accent underline hover:text-brand-accent/80"
                 >
                   {strings.components.cookieBanner.moreInfo}
-                </a>
+                </LocalizedLink>
               </p>
             </div>
             <div className="flex flex-col gap-2 sm:flex-row sm:items-center">

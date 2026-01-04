@@ -1,7 +1,7 @@
 import Image from "next/image";
-import Link from "next/link";
 import { withBasePath } from "@/lib/paths";
 import { strings } from "@/config/strings";
+import { LocalizedLink } from "../LocalizedLink";
 
 export function AboutPreviewSection() {
   return (
@@ -34,12 +34,12 @@ export function AboutPreviewSection() {
               </p>
             </div>
             <div className="flex justify-center lg:justify-start">
-              <Link
+              <LocalizedLink
                 href="/about"
                 className="inline-flex w-fit items-center justify-center bg-sky-950 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-sky-700"
               >
                 {strings.components.aboutPreview.aboutLink}
-              </Link>
+              </LocalizedLink>
             </div>
           </div>
         </div>

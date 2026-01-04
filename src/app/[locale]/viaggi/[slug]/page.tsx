@@ -10,14 +10,16 @@ import { formatDateRange } from "@/lib/dates";
 import { getAllTravels, getTravelBySlug } from "@/lib/travels";
 import { getTravelNavigation } from "@/lib/travelNavigation";
 import { optimizeCloudinaryUrl } from "@/lib/imageOptimization";
+import { getLocaleFromParams, getAllLocalizedPaths, createLocalizedPath } from "@/lib/i18n/routing";
 
 interface TravelPageProps {
-  params: Promise<{ slug: string }> | { slug: string };
+  params: Promise<{ locale: string; slug: string }> | { locale: string; slug: string };
 }
 
 export async function generateStaticParams() {
   const travels = await getAllTravels();
-  return travels.map((travel) => ({ slug: travel.slug }));
+  const travelParams = travels.map((travel) => ({ slug: travel.slug }));
+  return getAllLocalizedPaths("/viaggi/[slug]", travelParams);
 }
 
 export async function generateMetadata({
@@ -39,6 +41,7 @@ export async function generateMetadata({
 
 export default async function TravelPage({ params }: TravelPageProps) {
   const resolvedParams = await params;
+  const locale = await getLocaleFromParams({ locale: resolvedParams.locale });
   const travel = await getTravelBySlug(resolvedParams.slug);
   const travels = await getAllTravels();
   const { previous: previousTravel, next: nextTravel } = getTravelNavigation(travels, travel.slug);
@@ -97,14 +100,14 @@ export default async function TravelPage({ params }: TravelPageProps) {
             {travel.tags.map((tag) => (
               <Link
                 key={tag}
-                href={`/viaggi?tag=${encodeURIComponent(tag)}`}
+                href={`${createLocalizedPath("/viaggi", locale)}?tag=${encodeURIComponent(tag)}`}
                 className="text-xs font-semibold uppercase tracking-[0.3em] text-brand-muted hover:text-brand-primary transition"
               >
                 #{tag}
               </Link>
             ))}
             <Link
-              href={`/viaggi?tag=${encodeURIComponent(travel.location)}`}
+              href={`${createLocalizedPath("/viaggi", locale)}?tag=${encodeURIComponent(travel.location)}`}
               className="text-xs font-semibold uppercase tracking-[0.3em] text-brand-muted hover:text-brand-primary transition"
             >
               #{travel.location}

@@ -1,7 +1,6 @@
 "use client";
 
 import "leaflet/dist/leaflet.css";
-import Link from "next/link";
 import { useMemo } from "react";
 import type { LatLngBoundsExpression, LatLngExpression } from "leaflet";
 import L from "leaflet";
@@ -10,6 +9,7 @@ import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
 import type { Travel } from "@/lib/travels";
 import type { VisitedCity } from "@/config/visitedCities";
 import { createTravelMarkerIcon } from "./markerIcon";
+import { LocalizedLink } from "../LocalizedLink";
 
 interface TravelMapClientProps {
   travels: Array<Travel & { coords: NonNullable<Travel["coords"]> }>;
@@ -72,12 +72,12 @@ export default function TravelMapClient({ travels, visitedCities = [] }: TravelM
               <p className="text-base font-semibold text-brand-primary">
                 {travel.title}
               </p>
-              <Link
+              <LocalizedLink
                 href={`/viaggi/${travel.slug}`}
                 className="text-sm font-semibold text-brand-secondary hover:underline"
               >
                 Apri itinerario →
-              </Link>
+              </LocalizedLink>
             </div>
           </Popup>
         </Marker>

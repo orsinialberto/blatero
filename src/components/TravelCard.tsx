@@ -1,9 +1,9 @@
 import Image from "next/image";
-import Link from "next/link";
 
 import type { Travel } from "@/lib/travels";
 import { formatDateRange } from "@/lib/dates";
 import { optimizeCloudinaryUrl } from "@/lib/imageOptimization";
+import { LocalizedLink } from "./LocalizedLink";
 
 interface TravelCardProps {
   travel: Travel;
@@ -19,7 +19,7 @@ export function TravelCard({ travel }: TravelCardProps) {
   });
 
   return (
-    <Link href={`/viaggi/${travel.slug}`}>
+    <LocalizedLink href={`/viaggi/${travel.slug}`}>
       <article className="group relative aspect-square overflow-hidden bg-white transition-transform hover:scale-[1.02]">
         <Image
           src={optimizedCoverImage}
@@ -41,6 +41,6 @@ export function TravelCard({ travel }: TravelCardProps) {
           </div>
         </div>
       </article>
-    </Link>
+    </LocalizedLink>
   );
 }

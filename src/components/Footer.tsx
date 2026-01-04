@@ -1,5 +1,5 @@
-import Link from "next/link";
 import { strings } from "@/config/strings";
+import { LocalizedLink } from "./LocalizedLink";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -75,12 +75,12 @@ export function Footer() {
             <ul className="space-y-2.5">
               {quickLinks.map((link) => (
                 <li key={link.href}>
-                  <Link
+                  <LocalizedLink
                     href={link.href}
                     className="text-sm text-brand-secondary transition hover:text-brand-accent"
                   >
                     {link.label}
-                  </Link>
+                  </LocalizedLink>
                 </li>
               ))}
             </ul>

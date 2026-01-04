@@ -1,10 +1,11 @@
 "use client";
 
-import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
 import { navigationLinks } from "@/config/navigation";
 import { strings } from "@/config/strings";
+import { LocalizedLink } from "./LocalizedLink";
+import { removeLocaleFromPath } from "@/lib/i18n/routing";
 
 export function Header() {
   const pathname = usePathname();
@@ -12,13 +13,16 @@ export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
 
   const isActive = (href: string) => {
-    if (href === "/") {
-      return pathname === href;
+    const cleanPathname = removeLocaleFromPath(pathname || "");
+    const cleanHref = removeLocaleFromPath(href);
+    
+    if (cleanHref === "/" || cleanHref === "") {
+      return cleanPathname === "/" || cleanPathname === "";
     }
-    return pathname?.startsWith(href);
+    return cleanPathname?.startsWith(cleanHref);
   };
 
-  const isHomePage = pathname === "/";
+  const isHomePage = removeLocaleFromPath(pathname || "") === "/" || pathname === "/";
 
   useEffect(() => {
     if (!isHomePage) return;
@@ -42,7 +46,7 @@ export function Header() {
       }`}
     >
       <div className="flex items-center justify-between pt-5 pb-3 px-4 lg:px-24">
-        <Link
+        <LocalizedLink
           href="/"
           className={`font-comforter text-3xl font-normal tracking-tight transition-all hover:opacity-75 md:text-4xl ${
             headerIsTransparent ? "text-white" : "text-brand-primary"
@@ -50,7 +54,7 @@ export function Header() {
           onClick={() => setIsOpen(false)}
         >
           {strings.common.siteName}
-        </Link>
+        </LocalizedLink>
         <button
           className={`rounded-lg border px-4 py-2 text-sm font-medium transition-colors lg:hidden ${
             headerIsTransparent
@@ -74,7 +78,7 @@ export function Header() {
           <ul className="flex flex-col gap-6 lg:flex-row lg:items-center lg:gap-10">
             {navigationLinks.map((link) => (
               <li key={link.href}>
-                <Link
+                <LocalizedLink
                   href={link.href}
                   className={`font-klee text-sm font-medium transition-colors hover:opacity-75 ${
                     headerIsTransparent ? "text-white" : "text-brand-primary"
@@ -82,7 +86,7 @@ export function Header() {
                   onClick={() => setIsOpen(false)}
                 >
                   {link.label}
-                </Link>
+                </LocalizedLink>
               </li>
             ))}
           </ul>

@@ -1,6 +1,6 @@
-import Link from "next/link";
 import type { ReactNode } from "react";
 import { strings } from "@/config/strings";
+import { LocalizedLink } from "./LocalizedLink";
 
 interface TagFilterProps {
   tags: string[];
@@ -41,7 +41,7 @@ interface FilterChipProps {
 
 function FilterChip({ href, children, active }: FilterChipProps) {
   return (
-    <Link
+    <LocalizedLink
       href={href}
       className={`rounded-full border px-4 py-2 text-sm font-semibold transition ${
         active
@@ -50,6 +50,6 @@ function FilterChip({ href, children, active }: FilterChipProps) {
       }`}
     >
       {children}
-    </Link>
+    </LocalizedLink>
   );
 }

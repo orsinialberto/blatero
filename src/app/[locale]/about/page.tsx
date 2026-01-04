@@ -4,10 +4,22 @@ import Image from "next/image";
 import { aboutPageMetadata } from "@/config/pageMetadata";
 import { strings } from "@/config/strings";
 import { withBasePath } from "@/lib/paths";
+import { getLocaleFromParams } from "@/lib/i18n/routing";
+import { getAllLocalizedPaths } from "@/lib/i18n/routing";
+
+interface AboutPageProps {
+  params: Promise<{ locale: string }> | { locale: string };
+}
+
+export async function generateStaticParams() {
+  return getAllLocalizedPaths("/about");
+}
 
 export const metadata: Metadata = aboutPageMetadata;
 
-export default function AboutPage() {
+export default async function AboutPage({ params }: AboutPageProps) {
+  const locale = await getLocaleFromParams(params);
+  
   return (
     <div className="container grid gap-10 lg:grid-cols-[1fr_320px]">
       <section className="space-y-6 bg-white p-8 shadow-card">
@@ -19,15 +31,15 @@ export default function AboutPage() {
           <p className="font-klee text-lg">
             Da quando ho messo piede sul mio primo Cammino – quello di Santiago portoghese della costa, nel 2019 – non mi sono più fermato. 
             È stato amore a prima… vescica. Da allora cerco ogni anno di regalarmi almeno un viaggio, 
-            che sia dietro casa o dall’altra parte del mondo. 
+            che sia dietro casa o dall'altra parte del mondo. 
             Basta avere uno zaino in spalla e un sentiero davanti: è lì che sono davvero felice.
           </p>
           <p className="font-klee text-lg">
             Quando non cammino, mi trovi probabilmente in moto, 
-            a inseguire curve di montagna e panorami che si aprono all’improvviso come scene di un film.
+            a inseguire curve di montagna e panorami che si aprono all'improvviso come scene di un film.
           </p>
           <p className="font-klee text-lg">
-            E poi c’è la parte più “selvaggia” di me: quella che ama partire senza un piano preciso, solo con lo zaino, 
+            E poi c'è la parte più "selvaggia" di me: quella che ama partire senza un piano preciso, solo con lo zaino, 
             qualche idea vaga e tanta voglia di scoprire posti, culture e persone completamente diverse da quelle a cui sono abituato. 
             Viaggiare è per me un modo di sentirmi vivo, curioso e libero.
           </p>

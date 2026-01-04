@@ -1,8 +1,8 @@
 import Image from "next/image";
-import Link from "next/link";
 import { SectionHeader } from "@/components/SectionHeader";
 import { optimizeCloudinaryUrl } from "@/lib/imageOptimization";
 import { strings } from "@/config/strings";
+import { LocalizedLink } from "../LocalizedLink";
 
 interface GalleryPhoto {
   url: string;
@@ -47,7 +47,7 @@ export function GalleryPreviewSection({ photos }: GalleryPreviewSectionProps) {
 
         <div className="space-y-4">
           {/* Main Photo - Large */}
-          <Link
+          <LocalizedLink
             href="/galleria"
             className="relative block aspect-[21/9] overflow-hidden rounded-xl shadow-2xl hover:scale-[1.01] transition-transform duration-300 group"
           >
@@ -63,13 +63,13 @@ export function GalleryPreviewSection({ photos }: GalleryPreviewSectionProps) {
             <div className="absolute bottom-0 left-0 right-0 p-6 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
               <p className="text-white text-lg font-medium">{mainPhoto.travelTitle}</p>
             </div>
-          </Link>
+          </LocalizedLink>
 
           {/* Thumbnail Grid - Small photos below */}
           {otherPhotos.length > 0 && (
             <div className="grid grid-cols-3 md:grid-cols-5 gap-4">
               {otherPhotos.map((photo, i) => (
-                <Link
+                <LocalizedLink
                   key={`${photo.url}-${i}`}
                   href="/galleria"
                   className="relative aspect-square overflow-hidden rounded-lg shadow-lg hover:scale-105 hover:shadow-xl transition-all duration-300 group"
@@ -83,7 +83,7 @@ export function GalleryPreviewSection({ photos }: GalleryPreviewSectionProps) {
                     loading="lazy"
                   />
                   <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                </Link>
+                </LocalizedLink>
               ))}
             </div>
           )}

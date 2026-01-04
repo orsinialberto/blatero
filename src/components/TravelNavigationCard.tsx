@@ -1,7 +1,7 @@
-import Link from "next/link";
 import { formatDateRange } from "@/lib/dates";
 import type { Travel } from "@/lib/travels";
 import { strings } from "@/config/strings";
+import { LocalizedLink } from "./LocalizedLink";
 
 interface TravelNavigationCardProps {
   label: string;
@@ -24,7 +24,7 @@ export function TravelNavigationCard({
   }
 
   return (
-    <Link
+    <LocalizedLink
       href={`/viaggi/${travel.slug}`}
       className={`bg-white p-6 shadow-card transition hover:-translate-y-1 ${
         align === "end" ? "text-right" : ""
@@ -35,7 +35,7 @@ export function TravelNavigationCard({
       </p>
       <p className="mt-2 text-lg font-semibold text-brand-primary">{travel.title}</p>
       <p className="text-sm text-brand-muted">{formatDateRange(travel.date, travel.endDate)}</p>
-    </Link>
+    </LocalizedLink>
   );
 }
 

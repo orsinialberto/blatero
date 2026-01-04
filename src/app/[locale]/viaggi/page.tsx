@@ -7,10 +7,21 @@ import {
   getAllTags,
   getAllTravels,
 } from "@/lib/travels";
+import { getLocaleFromParams } from "@/lib/i18n/routing";
+import { getAllLocalizedPaths } from "@/lib/i18n/routing";
+
+interface TravelsPageProps {
+  params: Promise<{ locale: string }> | { locale: string };
+}
+
+export async function generateStaticParams() {
+  return getAllLocalizedPaths("/viaggi");
+}
 
 export const metadata: Metadata = travelsPageMetadata;
 
-export default async function TravelsPage() {
+export default async function TravelsPage({ params }: TravelsPageProps) {
+  const locale = await getLocaleFromParams(params);
   const allTravels = await getAllTravels();
   const tags = getAllTags();
 

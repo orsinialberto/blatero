@@ -3,6 +3,16 @@ import type { Metadata } from "next";
 import MasonryGallery from "@/components/MasonryGallery";
 import { galleryPageMetadata } from "@/config/pageMetadata";
 import { getAllTravels } from "@/lib/travels";
+import { getLocaleFromParams } from "@/lib/i18n/routing";
+import { getAllLocalizedPaths } from "@/lib/i18n/routing";
+
+interface GalleriaPageProps {
+  params: Promise<{ locale: string }> | { locale: string };
+}
+
+export async function generateStaticParams() {
+  return getAllLocalizedPaths("/galleria");
+}
 
 export const metadata: Metadata = galleryPageMetadata;
 
@@ -13,7 +23,8 @@ interface PhotoWithMetadata {
   location: string;
 }
 
-export default async function GalleriaPage() {
+export default async function GalleriaPage({ params }: GalleriaPageProps) {
+  const locale = await getLocaleFromParams(params);
   const travels = await getAllTravels();
 
   // Filtra solo i viaggi con galleria
@@ -46,4 +57,3 @@ export default async function GalleriaPage() {
     </main>
   );
 }
-
