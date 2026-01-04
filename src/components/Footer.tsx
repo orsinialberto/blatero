@@ -52,16 +52,16 @@ export function Footer() {
   ];
 
   return (
-    <footer className="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+    <footer className="bg-gradient-to-br from-slate-50 via-white to-slate-50 border-t border-slate-200">
       <div className="py-12 md:py-16 px-4 lg:px-24">
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-12 lg:gap-8">
           
           {/* Brand & Bio Section */}
           <div className="lg:col-span-5">
-            <p className="font-comforter text-3xl font-normal tracking-tight text-white md:text-4xl mb-4">
+            <p className="font-comforter text-3xl font-normal tracking-tight text-brand-primary md:text-4xl mb-4">
               Diario di Viaggio
             </p>
-            <p className="text-sm leading-relaxed text-slate-300 max-w-md">
+            <p className="text-sm leading-relaxed text-brand-muted max-w-md">
               Storie autentiche di viaggi zaino in spalla, trekking e avventure in moto. 
               Scopri itinerari, consigli pratici e ispirazioni per il tuo prossimo viaggio.
             </p>
@@ -69,7 +69,7 @@ export function Footer() {
 
           {/* Quick Links */}
           <div className="lg:col-span-3">
-            <h3 className="mb-4 text-xs font-semibold uppercase tracking-wider text-slate-400">
+            <h3 className="mb-4 text-xs font-semibold uppercase tracking-wider text-brand-muted">
               Navigazione
             </h3>
             <ul className="space-y-2.5">
@@ -77,7 +77,7 @@ export function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-slate-300 transition hover:text-brand-accent"
+                    className="text-sm text-brand-secondary transition hover:text-brand-accent"
                   >
                     {link.label}
                   </Link>
@@ -88,10 +88,10 @@ export function Footer() {
 
           {/* Social & Connect */}
           <div className="lg:col-span-4">
-            <h3 className="mb-4 text-xs font-semibold uppercase tracking-wider text-slate-400">
+            <h3 className="mb-4 text-xs font-semibold uppercase tracking-wider text-brand-muted">
               Seguimi
             </h3>
-            <p className="mb-4 text-sm text-slate-300">
+            <p className="mb-4 text-sm text-brand-muted">
               Segui le mie avventure in tempo reale e scopri i miei itinerari.
             </p>
             <div className="flex flex-wrap gap-3">
@@ -101,7 +101,7 @@ export function Footer() {
                   href={social.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group flex items-center gap-2 rounded-lg border border-slate-700 bg-slate-800/50 px-4 py-2.5 text-sm font-medium text-slate-300 backdrop-blur-sm transition hover:border-brand-accent hover:bg-brand-accent/10 hover:text-white"
+                  className="group flex items-center gap-2 rounded-lg border border-slate-200 bg-white px-4 py-2.5 text-sm font-medium text-brand-secondary backdrop-blur-sm transition hover:border-brand-accent hover:bg-brand-accent/10 hover:text-brand-primary"
                   aria-label={social.name}
                 >
                   <span className="transition group-hover:scale-110">
@@ -115,8 +115,8 @@ export function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-12 border-t border-slate-700 pt-8 text-center">
-          <p className="text-xs text-slate-400">
+        <div className="mt-12 border-t border-slate-200 pt-8 text-center">
+          <p className="text-xs text-brand-muted">
             © {currentYear} Diario di Viaggio · Tutti i diritti riservati
           </p>
         </div>

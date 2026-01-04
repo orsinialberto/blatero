@@ -16,9 +16,9 @@ interface TravelMapClientProps {
   visitedCities?: VisitedCity[];
 }
 
-const DEFAULT_CENTER: LatLngExpression = [41.8719, 12.5674];
+const GLOBAL_CENTER: LatLngExpression = [20, 0];
 const MIN_ZOOM = 2;
-const SINGLE_POINT_ZOOM = 6;
+const GLOBAL_ZOOM = 2;
 
 export default function TravelMapClient({ travels, visitedCities = [] }: TravelMapClientProps) {
   // Combina posizioni di travels e città visitate
@@ -32,17 +32,12 @@ export default function TravelMapClient({ travels, visitedCities = [] }: TravelM
     return [...travelPositions, ...cityPositions];
   }, [travels, visitedCities]);
 
-  const bounds = useMemo<LatLngBoundsExpression | undefined>(() => {
-    if (positions.length <= 1) {
-      return undefined;
-    }
+  // Non usiamo bounds per mostrare sempre il globo intero
+  const bounds = undefined;
 
-    return L.latLngBounds(positions).pad(0.25);
-  }, [positions]);
-
-  const center = positions[0] ?? DEFAULT_CENTER;
+  const center = GLOBAL_CENTER;
   const markerIcon = useMemo(() => createTravelMarkerIcon(), []);
-  const zoom = positions.length === 1 ? SINGLE_POINT_ZOOM : 4;
+  const zoom = GLOBAL_ZOOM;
 
   return (
     <MapContainer

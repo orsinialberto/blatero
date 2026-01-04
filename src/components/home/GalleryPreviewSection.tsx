@@ -21,18 +21,18 @@ export function GalleryPreviewSection({ photos }: GalleryPreviewSectionProps) {
   const [mainPhoto, ...otherPhotos] = photos;
 
   return (
-    <section className="relative overflow-hidden bg-slate-900 py-20">
+    <section className="relative overflow-hidden bg-slate-50 py-20">
       {/* Background Image */}
       <div className="absolute inset-0">
         <Image
           src="/images/gallery.JPG"
           alt="Montagne panorama"
           fill
-          className="object-cover opacity-30"
+          className="object-cover opacity-90"
           sizes="100vw"
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-slate-900/80 via-slate-900/70 to-slate-900/80" />
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-100/75 via-slate-200/65 to-slate-100/75" />
       </div>
 
       {/* Content */}
@@ -41,7 +41,7 @@ export function GalleryPreviewSection({ photos }: GalleryPreviewSectionProps) {
           label="Galleria fotografica"
           linkText="Vedi tutte le foto"
           linkHref="/galleria"
-          dark={true}
+          dark={false}
         />
 
         <div className="space-y-4">
