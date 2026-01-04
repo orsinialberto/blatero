@@ -37,8 +37,8 @@
     },
     "cookieBanner": {
       "title": "Cookie Management",
-      "description": "This site uses technical cookies for the functioning of maps and images. By continuing to browse, you accept the use of these cookies.",
-      "moreInfo": "More information",
+      "description": "This site uses technical cookies for the functioning of maps and images, and analytics cookies to improve user experience. You can accept or reject non-essential cookies. For more information, see the",
+      "privacyPolicy": "Cookie Policy",
       "reject": "Reject",
       "accept": "Accept",
       "rejectAriaLabel": "Reject cookies",
@@ -138,6 +138,47 @@
       "description": "All photos from my travels collected in a single photo gallery",
       "heading": "Photo Gallery",
       "statistics": "{photoCount} photos from {travelCount} travels"
+    },
+    "privacy": {
+      "title": "Privacy and Cookie Policy",
+      "description": "Privacy and cookie management information for this website",
+      "heading": "Privacy and Cookie Policy",
+      "sectionLabel": "Privacy",
+      "lastUpdate": "Last update",
+      "introduction": {
+        "title": "Introduction",
+        "text": "This page describes how this website manages cookies and user personal data, in compliance with GDPR (General Data Protection Regulation) and the guidelines of the Italian Data Protection Authority."
+      },
+      "technicalCookies": {
+        "title": "Technical Cookies",
+        "text": "This site uses technical cookies, which are necessary for the proper functioning of the website. These cookies do not require user consent as they are essential for providing the requested service.",
+        "list1": "Cookies for the functioning of interactive maps (Leaflet)",
+        "list2": "Cookies for managing display preferences"
+      },
+      "analyticsCookies": {
+        "title": "Analytics Cookies",
+        "text": "This site uses Google Analytics 4 (GA4) to collect anonymous statistical information about website usage. These cookies are only installed with explicit user consent.",
+        "details": "Google Analytics uses cookies to analyze how users interact with the site, collecting information such as:",
+        "list1": "Number of visitors and pages visited",
+        "list2": "Time spent on the site",
+        "list3": "Traffic sources (where visitors come from)"
+      },
+      "management": {
+        "title": "Cookie Management",
+        "text": "On your first visit to the site, a banner is displayed that allows you to accept or reject non-essential cookies (analytics cookies).",
+        "details": "Your preferences are saved in your browser and remembered for 6 months. You can change your preferences at any time by deleting cookies from your browser or by contacting us directly."
+      },
+      "rights": {
+        "title": "User Rights",
+        "text": "Under GDPR, you have the right to:",
+        "list1": "Access your personal data",
+        "list2": "Request correction or deletion of data",
+        "list3": "Object to data processing or withdraw consent at any time"
+      },
+      "contacts": {
+        "title": "Contacts",
+        "text": "For any questions regarding privacy and cookie management, you can contact us at the email address:"
+      }
     }
   }
 }

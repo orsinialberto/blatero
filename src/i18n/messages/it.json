@@ -37,8 +37,8 @@
     },
     "cookieBanner": {
       "title": "Gestione dei Cookie",
-      "description": "Questo sito utilizza cookie tecnici per il funzionamento delle mappe e delle immagini. Continuando a navigare, accetti l'utilizzo di questi cookie.",
-      "moreInfo": "Maggiori informazioni",
+      "description": "Questo sito utilizza cookie tecnici per il funzionamento delle mappe e delle immagini, e cookie di analytics per migliorare l'esperienza utente. Puoi accettare o rifiutare i cookie non essenziali. Per maggiori informazioni, consulta la",
+      "privacyPolicy": "Cookie Policy",
       "reject": "Rifiuta",
       "accept": "Accetta",
       "rejectAriaLabel": "Rifiuta i cookie",
@@ -138,6 +138,47 @@
       "description": "Tutte le foto dei miei viaggi raccolte in un'unica galleria fotografica",
       "heading": "Galleria Fotografica",
       "statistics": "{photoCount} foto da {travelCount} viaggi"
+    },
+    "privacy": {
+      "title": "Privacy e Cookie Policy",
+      "description": "Informativa sulla privacy e sulla gestione dei cookie del sito",
+      "heading": "Privacy e Cookie Policy",
+      "sectionLabel": "Privacy",
+      "lastUpdate": "Ultimo aggiornamento",
+      "introduction": {
+        "title": "Introduzione",
+        "text": "Questa pagina descrive come questo sito web gestisce i cookie e i dati personali degli utenti, nel rispetto della normativa GDPR (Regolamento Generale sulla Protezione dei Dati) e delle linee guida del Garante per la Protezione dei Dati Personali italiano."
+      },
+      "technicalCookies": {
+        "title": "Cookie Tecnici",
+        "text": "Questo sito utilizza cookie tecnici, che sono necessari per il corretto funzionamento del sito web. Questi cookie non richiedono il consenso dell'utente in quanto sono essenziali per la fornitura del servizio richiesto.",
+        "list1": "Cookie per il funzionamento delle mappe interattive (Leaflet)",
+        "list2": "Cookie per la gestione delle preferenze di visualizzazione"
+      },
+      "analyticsCookies": {
+        "title": "Cookie di Analytics",
+        "text": "Questo sito utilizza Google Analytics 4 (GA4) per raccogliere informazioni statistiche anonime sull'utilizzo del sito web. Questi cookie vengono installati solo previo consenso esplicito dell'utente.",
+        "details": "Google Analytics utilizza cookie per analizzare come gli utenti interagiscono con il sito, raccogliendo informazioni come:",
+        "list1": "Numero di visitatori e pagine visitate",
+        "list2": "Tempo di permanenza sul sito",
+        "list3": "Fonti di traffico (da dove arrivano i visitatori)"
+      },
+      "management": {
+        "title": "Gestione dei Cookie",
+        "text": "Alla prima visita del sito, viene visualizzato un banner che ti permette di accettare o rifiutare i cookie non essenziali (cookie di analytics).",
+        "details": "Le tue preferenze vengono salvate nel tuo browser e ricordate per 6 mesi. Puoi modificare le tue preferenze in qualsiasi momento cancellando i cookie dal tuo browser o contattandoci direttamente."
+      },
+      "rights": {
+        "title": "Diritti dell'Utente",
+        "text": "Ai sensi del GDPR, hai diritto a:",
+        "list1": "Accedere ai tuoi dati personali",
+        "list2": "Richiedere la correzione o la cancellazione dei dati",
+        "list3": "Opporti al trattamento dei dati o revocare il consenso in qualsiasi momento"
+      },
+      "contacts": {
+        "title": "Contatti",
+        "text": "Per qualsiasi domanda riguardo alla privacy e alla gestione dei cookie, puoi contattarci all'indirizzo email:"
+      }
     }
   }
 }

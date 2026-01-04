@@ -28,6 +28,12 @@ export function CookieBanner() {
     localStorage.setItem(COOKIE_CONSENT_KEY, "accepted");
     setIsVisible(false);
     setTimeout(() => setShowBanner(false), 300);
+    
+    // Dispatch custom event to notify GoogleAnalytics component
+    // This ensures immediate initialization even in the same window
+    if (typeof window !== "undefined") {
+      window.dispatchEvent(new Event("cookie-consent-accepted"));
+    }
   };
 
   const handleReject = () => {
@@ -58,11 +64,12 @@ export function CookieBanner() {
               <p className="text-sm text-brand-muted">
                 {t.components.cookieBanner.description}{" "}
                 <LocalizedLink
-                  href="/about"
+                  href="/privacy"
                   className="text-brand-accent underline hover:text-brand-accent/80"
                 >
-                  {t.components.cookieBanner.moreInfo}
+                  {t.components.cookieBanner.privacyPolicy}
                 </LocalizedLink>
+                .
               </p>
             </div>
             <div className="flex flex-col gap-2 sm:flex-row sm:items-center">

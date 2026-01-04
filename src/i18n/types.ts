@@ -49,7 +49,7 @@ export interface TranslationMessages {
     cookieBanner: {
       title: string;
       description: string;
-      moreInfo: string;
+      privacyPolicy: string;
       reject: string;
       accept: string;
       rejectAriaLabel: string;
@@ -149,6 +149,47 @@ export interface TranslationMessages {
       description: string;
       heading: string;
       statistics: string;
+    };
+    privacy: {
+      title: string;
+      description: string;
+      heading: string;
+      sectionLabel: string;
+      lastUpdate: string;
+      introduction: {
+        title: string;
+        text: string;
+      };
+      technicalCookies: {
+        title: string;
+        text: string;
+        list1: string;
+        list2: string;
+      };
+      analyticsCookies: {
+        title: string;
+        text: string;
+        details: string;
+        list1: string;
+        list2: string;
+        list3: string;
+      };
+      management: {
+        title: string;
+        text: string;
+        details: string;
+      };
+      rights: {
+        title: string;
+        text: string;
+        list1: string;
+        list2: string;
+        list3: string;
+      };
+      contacts: {
+        title: string;
+        text: string;
+      };
     };
   };
 }

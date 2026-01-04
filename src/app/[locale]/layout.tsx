@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 
 import "./../globals.css";
+import { ConsentModeInitializer } from "@/components/ConsentModeInitializer";
 import { CookieBanner } from "@/components/CookieBanner";
 import { Footer } from "@/components/Footer";
+import { GoogleAnalytics } from "@/components/GoogleAnalytics";
 import { Header } from "@/components/Header";
 import { MainWrapper } from "@/components/MainWrapper";
 import { getSiteMetadata, getAlternateLanguageLinks } from "@/config/metadata";
@@ -69,12 +71,14 @@ export default async function LocaleLayout({
 
   return (
     <>
+      <ConsentModeInitializer />
       <div className="flex min-h-screen flex-col">
         <Header />
         <MainWrapper>{children}</MainWrapper>
         <Footer />
       </div>
       <CookieBanner />
+      {process.env.NEXT_PUBLIC_GA_ID && <GoogleAnalytics />}
     </>
   );
 }
