@@ -3,6 +3,11 @@
     "siteName": "Travel Diary",
     "copyright": "All rights reserved"
   },
+  "metadata": {
+    "title": "Travel Diary",
+    "description": "Itineraries, photos and travel notes told through a fast and modern website.",
+    "siteUrl": "https://albertorsini.it"
+  },
   "navigation": {
     "menu": "Menu",
     "close": "Close",

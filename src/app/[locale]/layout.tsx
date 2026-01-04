@@ -6,8 +6,9 @@ import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { MainWrapper } from "@/components/MainWrapper";
 import { fontVariables } from "@/config/fonts";
-import { siteMetadata } from "@/config/metadata";
+import { getSiteMetadata, getAlternateLanguageLinks } from "@/config/metadata";
 import { getLocaleFromParams } from "@/lib/i18n/routing";
+import { supportedLocales } from "@/config/locales";
 
 interface LocaleLayoutProps {
   children: React.ReactNode;
@@ -16,12 +17,48 @@ interface LocaleLayoutProps {
 
 export async function generateMetadata({ params }: LocaleLayoutProps): Promise<Metadata> {
   const locale = await getLocaleFromParams(params);
-  const lang = locale.split("-")[0];
+  const metadata = getSiteMetadata(locale);
+  
+  // Generate alternate language links for homepage
+  // Individual pages can override metadata with page-specific paths
+  const alternates = getAlternateLanguageLinks("/");
+  
+  // Add x-default hreflang (points to default locale - Italian)
+  const defaultAlternate = alternates.find((alt) => alt.hreflang === "it-IT") || alternates[0];
+  
+  // Build languages object for hreflang
+  const languages: Record<string, string> = {
+    "x-default": defaultAlternate.href,
+  };
+  
+  alternates.forEach((alt) => {
+    languages[alt.hreflang] = alt.href;
+  });
   
   return {
-    metadataBase: new URL(siteMetadata.url),
-    title: siteMetadata.title,
-    description: siteMetadata.description,
+    metadataBase: new URL(metadata.url),
+    title: metadata.title,
+    description: metadata.description,
+    alternates: {
+      canonical: `${metadata.url}/${locale}/`,
+      languages,
+    },
+    openGraph: {
+      title: metadata.title.default,
+      description: metadata.description,
+      url: `${metadata.url}/${locale}/`,
+      siteName: metadata.title.default,
+      locale: metadata.locale,
+      alternateLocale: alternates
+        .filter((alt) => alt.hreflang !== metadata.locale)
+        .map((alt) => alt.hreflang),
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: metadata.title.default,
+      description: metadata.description,
+    },
   };
 }
 

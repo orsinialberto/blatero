@@ -1,29 +1,17 @@
-import type { Metadata } from "next";
-
-import "./globals.css";
-import { fontVariables } from "@/config/fonts";
-import { siteMetadata } from "@/config/metadata";
-
-export const metadata: Metadata = {
-  metadataBase: new URL(siteMetadata.url),
-  title: siteMetadata.title,
-  description: siteMetadata.description,
-};
-
 /**
  * Root layout - provides base HTML structure
- * The [locale]/layout.tsx handles the actual page structure with Header, Footer, etc.
+ * The [locale]/layout.tsx handles locale-specific metadata, lang attribute, and page structure
+ * Note: lang attribute is set in [locale]/layout.tsx via html tag
  */
+
+import "./globals.css";
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return (
-    <html lang={siteMetadata.locale.split("-")[0]}>
-      <body className={`${fontVariables} bg-brand-background antialiased`}>
-        {children}
-      </body>
-    </html>
-  );
+  // Return children directly - [locale]/layout.tsx provides html/body structure
+  // This is a special pattern for i18n where the nested layout handles html/body
+  return children;
 }

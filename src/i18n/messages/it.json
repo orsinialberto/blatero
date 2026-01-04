@@ -3,6 +3,11 @@
     "siteName": "Diario di Viaggio",
     "copyright": "Tutti i diritti riservati"
   },
+  "metadata": {
+    "title": "Diario di Viaggio",
+    "description": "Itinerari, foto e appunti di viaggio raccontati attraverso un sito veloce e moderno.",
+    "siteUrl": "https://albertorsini.it"
+  },
   "navigation": {
     "menu": "Menu",
     "close": "Chiudi",
