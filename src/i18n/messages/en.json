@@ -1,0 +1,92 @@
+{
+  "common": {
+    "siteName": "Travel Diary",
+    "copyright": "All rights reserved"
+  },
+  "navigation": {
+    "menu": "Menu",
+    "close": "Close",
+    "links": {
+      "home": "HOME",
+      "travels": "TRAVELS",
+      "gallery": "GALLERY",
+      "about": "ABOUT ME"
+    }
+  },
+  "footer": {
+    "navigation": "Navigation",
+    "follow": "Follow me",
+    "description": "Authentic stories of backpacking trips, trekking and motorcycle adventures. Discover itineraries, practical tips and inspiration for your next journey.",
+    "followDescription": "Follow my adventures in real time and discover my itineraries.",
+    "quickLinks": {
+      "home": "Home",
+      "allTravels": "All Travels",
+      "photoGallery": "Photo Gallery",
+      "about": "About Me"
+    }
+  },
+  "components": {
+    "tagFilter": {
+      "allTravels": "All travels"
+    },
+    "cookieBanner": {
+      "title": "Cookie Management",
+      "description": "This site uses technical cookies for the functioning of maps and images. By continuing to browse, you accept the use of these cookies.",
+      "moreInfo": "More information",
+      "reject": "Reject",
+      "accept": "Accept",
+      "rejectAriaLabel": "Reject cookies",
+      "acceptAriaLabel": "Accept cookies"
+    },
+    "travelStats": {
+      "countriesVisited": "Countries visited",
+      "continentsVisited": "Continents visited",
+      "kilometersWalked": "Km walked",
+      "brokenShoes": "Pairs of broken shoes"
+    },
+    "travelTimeline": {
+      "stagesLabel": "Journey stages"
+    },
+    "travelNavigationCard": {
+      "comingSoon": "Coming soon."
+    },
+    "travelGallery": {
+      "fullGallery": "Full gallery",
+      "close": "Close",
+      "photoGallery": "Photo gallery",
+      "seeAll": "See all",
+      "previousPhoto": "Previous photo",
+      "nextPhoto": "Next photo",
+      "scrollThumbnailsBack": "Scroll thumbnails back",
+      "scrollThumbnailsForward": "Scroll thumbnails forward"
+    },
+    "masonryGallery": {
+      "close": "Close",
+      "previousPhoto": "Previous photo",
+      "nextPhoto": "Next photo",
+      "noPhotosAvailable": "No photos available"
+    },
+    "sectionHeader": {
+      "latestPublications": "Latest publications",
+      "seeAll": "See all",
+      "photoGallery": "Photo gallery",
+      "seeAllPhotos": "See all photos"
+    },
+    "aboutPreview": {
+      "title": "I pack my backpack, follow the road and go...",
+      "description1": "Hi, I'm Alberto, and for a few years now I've discovered that my happiness weighs more or less like a backpack. I walk, travel by motorcycle, explore when I can and how I can.",
+      "description2": "I write this blog to capture a bit of that freedom that travel gives, to remember what I've seen and share what has stayed with me.",
+      "aboutLink": "About me"
+    }
+  },
+  "pages": {
+    "about": {
+      "title": "About me",
+      "description": "Who I am, why I opened this diary and how to contact me.",
+      "heading": "Hi, I'm Alberto",
+      "sectionLabel": "About me",
+      "travelCompanions": "Travel companions",
+      "contacts": "Contacts"
+    }
+  }
+}
