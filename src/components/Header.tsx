@@ -88,27 +88,43 @@ export function Header() {
                 </li>
               ))}
             </ul>
-            <div className="mt-6 lg:hidden">
-              <Suspense fallback={<div className="h-9 w-20 rounded-lg border border-slate-300 bg-slate-50" />}>
-                <LanguageSwitcher isTransparent={headerIsTransparent} />
-              </Suspense>
-            </div>
           </nav>
-          <div className="hidden lg:block">
-            <Suspense fallback={<div className="h-9 w-20 rounded-lg border border-slate-300 bg-slate-50" />}>
-              <LanguageSwitcher isTransparent={headerIsTransparent} />
-            </Suspense>
-          </div>
+          <Suspense fallback={<div className="h-9 w-20 rounded-lg border border-slate-300 bg-slate-50" />}>
+            <LanguageSwitcher isTransparent={headerIsTransparent} />
+          </Suspense>
           <button
-            className={`rounded-lg border px-4 py-2 text-sm font-medium transition-colors lg:hidden ${
+            className={`flex items-center justify-center rounded-lg p-2 transition-opacity lg:hidden ${
               headerIsTransparent
-                ? "border-white/30 bg-white/20 text-white hover:bg-white/30"
-                : "border-slate-300 bg-white text-brand-primary hover:bg-slate-100"
+                ? "text-white hover:opacity-75"
+                : "text-brand-primary hover:opacity-75"
             }`}
             onClick={() => setIsOpen((prev) => !prev)}
             aria-expanded={isOpen}
+            aria-label={isOpen ? t.navigation.close : t.navigation.menu}
           >
-            {isOpen ? t.navigation.close : t.navigation.menu}
+            <svg
+              className="h-6 w-6 transition-transform"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              {isOpen ? (
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              ) : (
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
+              )}
+            </svg>
           </button>
         </div>
       </div>
