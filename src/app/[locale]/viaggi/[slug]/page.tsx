@@ -13,15 +13,24 @@ import { optimizeCloudinaryUrl } from "@/lib/imageOptimization";
 import { getLocaleFromParams, getAllLocalizedPaths, createLocalizedPath } from "@/lib/i18n/routing";
 import { getTranslations } from "@/i18n";
 import type { SupportedLocale } from "@/config/locales";
+import { supportedLocales } from "@/config/locales";
 
 interface TravelPageProps {
   params: Promise<{ locale: string; slug: string }> | { locale: string; slug: string };
 }
 
 export async function generateStaticParams() {
-  const travels = await getAllTravels();
-  const travelParams = travels.map((travel) => ({ slug: travel.slug }));
-  return getAllLocalizedPaths("/viaggi/[slug]", travelParams);
+  // Generate params for each locale separately to ensure we only include
+  // travels that exist in that locale
+  const allParams: Array<{ locale: SupportedLocale; slug: string }> = [];
+  
+  for (const locale of supportedLocales) {
+    const travels = await getAllTravels(locale);
+    const travelParams = travels.map((travel) => ({ slug: travel.slug }));
+    allParams.push(...travelParams.map((params) => ({ locale, ...params })));
+  }
+  
+  return allParams;
 }
 
 export async function generateMetadata({
@@ -29,7 +38,7 @@ export async function generateMetadata({
 }: TravelPageProps): Promise<Metadata> {
   const resolvedParams = await params;
   const locale = await getLocaleFromParams({ locale: resolvedParams.locale });
-  const travel = await getTravelBySlug(resolvedParams.slug);
+  const travel = await getTravelBySlug(resolvedParams.slug, locale);
   const t = getTranslations(locale as SupportedLocale);
 
   // For now, travel content (title, description) remains in Italian
@@ -48,8 +57,8 @@ export async function generateMetadata({
 export default async function TravelPage({ params }: TravelPageProps) {
   const resolvedParams = await params;
   const locale = await getLocaleFromParams({ locale: resolvedParams.locale });
-  const travel = await getTravelBySlug(resolvedParams.slug);
-  const travels = await getAllTravels();
+  const travel = await getTravelBySlug(resolvedParams.slug, locale);
+  const travels = await getAllTravels(locale);
   const { previous: previousTravel, next: nextTravel } = getTravelNavigation(travels, travel.slug);
   const t = getTranslations(locale as SupportedLocale);
 

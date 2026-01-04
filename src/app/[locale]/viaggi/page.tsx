@@ -34,8 +34,8 @@ export async function generateMetadata({
 export default async function TravelsPage({ params }: TravelsPageProps) {
   const locale = await getLocaleFromParams(params);
   const t = getTranslations(locale as SupportedLocale);
-  const allTravels = await getAllTravels();
-  const tags = getAllTags();
+  const allTravels = await getAllTravels(locale);
+  const tags = getAllTags(locale);
 
   return (
     <div className="container space-y-10">

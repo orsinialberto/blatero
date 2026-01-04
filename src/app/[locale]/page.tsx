@@ -32,9 +32,9 @@ function shuffleArray<T>(array: T[]): T[] {
 
 export default async function HomePage({ params }: HomePageProps) {
   const locale = await getLocaleFromParams(params);
-  const travels = await getAllTravels();
+  const travels = await getAllTravels(locale);
   const highlights = travels.slice(0, 4);
-  const stats = getTravelStats();
+  const stats = getTravelStats(locale);
 
   // Raccogli tutte le foto dai viaggi e selezionane 6 random
   const allPhotos = travels
@@ -70,7 +70,7 @@ export default async function HomePage({ params }: HomePageProps) {
       </div>
 
       <div className="mt-24">
-        <TravelMap />
+        <TravelMap locale={locale} />
       </div>
 
     </div>

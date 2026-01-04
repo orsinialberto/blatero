@@ -1,4 +1,4 @@
-import { getAllTravels, type Travel } from "@/lib/travels";
+import { getAllTravels, type Travel, type Locale } from "@/lib/travels";
 import { TravelMapLazy } from "@/components/map/TravelMapLazy";
 import { visitedCities } from "@/config/visitedCities";
 
@@ -8,8 +8,12 @@ function hasCoords(travel: Travel): travel is TravelWithCoords {
   return Boolean(travel.coords);
 }
 
-export async function TravelMap() {
-  const travels = await getAllTravels();
+interface TravelMapProps {
+  locale: Locale;
+}
+
+export async function TravelMap({ locale }: TravelMapProps) {
+  const travels = await getAllTravels(locale);
   const travelsWithCoords = travels.filter(hasCoords);
 
   // Se non ci sono travels con coordinate, controlla se ci sono città visitate
