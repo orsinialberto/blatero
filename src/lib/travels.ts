@@ -1,3 +1,16 @@
+/**
+ * Travel data parsing and management
+ * 
+ * Multilingual File Convention:
+ * - Italian (default): [slug].md (e.g., cambogia-2025.md)
+ * - English: [slug].en.md (e.g., cambogia-2025.en.md)
+ * - Slug must be identical across all language versions
+ * - Common fields (slug, date, coverImage, tags, coords, map, gallery, etc.) must be identical
+ * - Translated fields (title, description, content, duration, map.points[].description) should be localized
+ * 
+ * See MARKDOWN_I18N_CONVENTION.md for complete documentation.
+ */
+
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
@@ -54,11 +67,26 @@ export interface Travel {
 const travelsDirectory = path.join(process.cwd(), "src", "content", "travels");
 let travelCache: Travel[] | null = null;
 
+/**
+ * Builds the travel cache by reading all Markdown files.
+ * 
+ * Note: Currently processes all .md files. Future implementation should:
+ * - Filter by locale (e.g., only .md for Italian, .en.md for English)
+ * - Group files by base slug to handle multilingual versions
+ * - Validate common fields consistency across language versions
+ * 
+ * File naming convention:
+ * - [slug].md → Italian (default)
+ * - [slug].en.md → English
+ * See MARKDOWN_I18N_CONVENTION.md for details.
+ */
 function buildCache(): Travel[] {
   const files = fs.readdirSync(travelsDirectory);
   const travels = files
     .filter((file) => file.endsWith(".md"))
     .map((file) => {
+      // TODO: Extract locale from filename (e.g., .en.md → 'en', .md → 'it')
+      // TODO: Extract base slug (remove locale extension)
       const slug = file.replace(/\.md$/, "");
       return parseTravelFromFile(slug);
     });
@@ -75,7 +103,20 @@ function ensureCache(): Travel[] {
   return travelCache;
 }
 
+/**
+ * Parses a travel Markdown file into a Travel object.
+ * 
+ * Common fields (must be identical across language versions):
+ * - slug, date, endDate, coverImage, tags, location, coords, map, gallery,
+ *   heroTitleVariant, totalKilometers, timeline
+ * 
+ * Translated fields (should be localized):
+ * - title, description, content, duration, map.points[].description
+ * 
+ * @param slug - Base slug of the travel (without locale extension)
+ */
 function parseTravelFromFile(slug: string): Travel {
+  // TODO: Support locale parameter to load [slug].[locale].md files
   const filePath = path.join(travelsDirectory, `${slug}.md`);
   const fileContent = fs.readFileSync(filePath, "utf-8");
   const { data, content } = matter(fileContent);

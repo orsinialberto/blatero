@@ -79,7 +79,8 @@ blog/
 │   │
 │   └── content/                       # Contenuti Markdown
 │       └── travels/                    # File .md per ogni viaggio
-│           ├── cambogia-2025.md
+│           ├── cambogia-2025.md        # Italiano (default)
+│           ├── cambogia-2025.en.md      # Inglese (se presente)
 │           ├── cammino-dei-borghi-silenti-2025.md
 │           ├── fishermens-trail-2024.md
 │           └── italia-on-the-road-2024.md
@@ -116,6 +117,19 @@ Il sistema di contenuti è basato su **file Markdown** con frontmatter YAML:
 - **Parsing**: `gray-matter` estrae frontmatter e contenuto
 - **Rendering**: `remark` converte Markdown in HTML
 - **Cache**: Cache in-memory per performance (singleton pattern)
+- **Multilingual Support**: Supporto per file multilingua (vedi `MARKDOWN_I18N_CONVENTION.md`)
+
+#### Convenzione File Multilingua
+
+Il progetto supporta file Markdown multilingua seguendo questa convenzione:
+
+- **File italiano (default)**: `[slug].md` (es. `cambogia-2025.md`)
+- **File inglese**: `[slug].en.md` (es. `cambogia-2025.en.md`)
+- **Slug identico**: Lo slug deve essere identico in tutte le versioni linguistiche
+- **Campi comuni**: Alcuni campi (slug, date, coverImage, tags, coords, map, gallery, etc.) devono essere identici
+- **Campi tradotti**: Altri campi (title, description, content, duration, map.points[].description) devono essere tradotti
+
+Per i dettagli completi, consulta **`MARKDOWN_I18N_CONVENTION.md`**.
 
 #### Formato File Markdown
 
@@ -375,6 +389,23 @@ interface TravelTimelineItem {
    - Gallery: array di URL immagini
 
 5. **Build**: Il viaggio apparirà automaticamente dopo il build
+
+### Aggiungere una Traduzione
+
+Per aggiungere una versione inglese (o altra lingua) del viaggio:
+
+1. **Crea file con estensione locale**:
+   ```bash
+   src/content/travels/mio-viaggio-2025.en.md
+   ```
+
+2. **Mantieni identici i campi comuni** (slug, date, coverImage, tags, coords, map, gallery, etc.)
+
+3. **Traduci i campi localizzati** (title, description, content, duration, map.points[].description)
+
+4. **Verifica che lo slug corrisponda** esattamente al file italiano
+
+Per i dettagli completi, consulta **`MARKDOWN_I18N_CONVENTION.md`**.
 
 ## Scripts Disponibili
 
