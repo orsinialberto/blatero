@@ -160,7 +160,7 @@ export default function MasonryGallery({ photos }: MasonryGalleryProps) {
   if (photos.length === 0) {
     return (
       <div className="text-center py-12">
-        <p className="text-brand-muted">Nessuna foto disponibile</p>
+        <p className="text-brand-muted">{strings.components.masonryGallery.noPhotosAvailable}</p>
       </div>
     );
   }

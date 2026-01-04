@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { formatDateRange } from "@/lib/dates";
 import type { Travel } from "@/lib/travels";
+import { strings } from "@/config/strings";
 
 interface TravelNavigationCardProps {
   label: string;
@@ -17,7 +18,7 @@ export function TravelNavigationCard({
     return (
       <div className="border border-dashed border-slate-200 bg-white p-6 text-brand-muted">
         {label}
-        <p className="text-sm">Arriverà presto.</p>
+        <p className="text-sm">{strings.components.travelNavigationCard.comingSoon}</p>
       </div>
     );
   }

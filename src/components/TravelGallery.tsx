@@ -109,7 +109,7 @@ export function TravelGallery({ images, title }: TravelGalleryProps) {
       <div className="flex flex-wrap items-center justify-between gap-3">
         <div>
           <p className="text-xs font-semibold uppercase tracking-[0.3em] text-brand-muted">
-            Galleria fotografica
+            {strings.components.travelGallery.photoGallery}
           </p>
         </div>
         <div className="flex flex-wrap items-center gap-2 text-sm">
@@ -119,7 +119,7 @@ export function TravelGallery({ images, title }: TravelGalleryProps) {
               onClick={() => setIsLightboxOpen(true)}
               className="rounded-full border border-brand-secondary px-4 py-1.5 text-xs font-semibold uppercase tracking-wide text-brand-secondary transition hover:-translate-y-0.5"
             >
-              Vedi tutte ({safeImages.length})
+              {strings.components.travelGallery.seeAll} ({safeImages.length})
             </button>
           )}
         </div>
@@ -142,7 +142,7 @@ export function TravelGallery({ images, title }: TravelGalleryProps) {
           <div className="pointer-events-none absolute inset-0 flex items-center justify-between px-4">
             <button
               type="button"
-              aria-label="Foto precedente"
+              aria-label={strings.components.travelGallery.previousPhoto}
               className="pointer-events-auto hidden rounded-full bg-white/80 p-3 text-brand-primary shadow-card transition hover:-translate-x-1 md:block"
               onClick={() => goTo("prev")}
             >
@@ -150,7 +150,7 @@ export function TravelGallery({ images, title }: TravelGalleryProps) {
             </button>
             <button
               type="button"
-              aria-label="Foto successiva"
+              aria-label={strings.components.travelGallery.nextPhoto}
               className="pointer-events-auto hidden rounded-full bg-white/80 p-3 text-brand-primary shadow-card transition hover:translate-x-1 md:block"
               onClick={() => goTo("next")}
             >
@@ -205,7 +205,7 @@ export function TravelGallery({ images, title }: TravelGalleryProps) {
             <div className="pointer-events-none absolute inset-0 flex items-center justify-between">
               <button
                 type="button"
-                aria-label="Scroll thumbnails indietro"
+                aria-label={strings.components.travelGallery.scrollThumbnailsBack}
                 className="pointer-events-auto hidden rounded-full bg-white/90 p-2 text-brand-primary shadow-card transition hover:-translate-x-1 md:block"
                 onClick={() =>
                   thumbsRef.current?.scrollBy({
@@ -218,7 +218,7 @@ export function TravelGallery({ images, title }: TravelGalleryProps) {
               </button>
               <button
                 type="button"
-                aria-label="Scroll thumbnails avanti"
+                aria-label={strings.components.travelGallery.scrollThumbnailsForward}
                 className="pointer-events-auto hidden rounded-full bg-white/90 p-2 text-brand-primary shadow-card transition hover:translate-x-1 md:block"
                 onClick={() =>
                   thumbsRef.current?.scrollBy({
@@ -302,7 +302,7 @@ export function TravelGallery({ images, title }: TravelGalleryProps) {
               <div className="pointer-events-none absolute inset-0 flex items-center justify-between px-6">
                 <button
                   type="button"
-                  aria-label="Foto precedente"
+                  aria-label={strings.components.travelGallery.previousPhoto}
                   className="pointer-events-auto rounded-full bg-black/60 p-4 text-white backdrop-blur transition hover:bg-black/80"
                   onClick={(e) => {
                     e.stopPropagation();
@@ -313,7 +313,7 @@ export function TravelGallery({ images, title }: TravelGalleryProps) {
                 </button>
                 <button
                   type="button"
-                  aria-label="Foto successiva"
+                  aria-label={strings.components.travelGallery.nextPhoto}
                   className="pointer-events-auto rounded-full bg-black/60 p-4 text-white backdrop-blur transition hover:bg-black/80"
                   onClick={(e) => {
                     e.stopPropagation();

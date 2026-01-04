@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { strings } from "@/config/strings";
 
 const COOKIE_CONSENT_KEY = "cookie-consent";
 
@@ -50,17 +51,15 @@ export function CookieBanner() {
           <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
             <div className="flex-1 space-y-2">
               <p className="text-sm font-semibold text-brand-primary">
-                Gestione dei Cookie
+                {strings.components.cookieBanner.title}
               </p>
               <p className="text-sm text-brand-muted">
-                Questo sito utilizza cookie tecnici per il funzionamento delle
-                mappe e delle immagini. Continuando a navigare, accetti
-                l&apos;utilizzo di questi cookie.{" "}
+                {strings.components.cookieBanner.description}{" "}
                 <a
                   href="/about"
                   className="text-brand-accent underline hover:text-brand-accent/80"
                 >
-                  Maggiori informazioni
+                  {strings.components.cookieBanner.moreInfo}
                 </a>
               </p>
             </div>
@@ -68,16 +67,16 @@ export function CookieBanner() {
               <button
                 onClick={handleReject}
                 className="px-4 py-2 text-sm font-medium text-brand-muted hover:text-brand-primary transition-colors whitespace-nowrap"
-                aria-label="Rifiuta i cookie"
+                aria-label={strings.components.cookieBanner.rejectAriaLabel}
               >
-                Rifiuta
+                {strings.components.cookieBanner.reject}
               </button>
               <button
                 onClick={handleAccept}
                 className="px-6 py-2 text-sm font-semibold text-white bg-brand-accent hover:bg-brand-accent/90 rounded-lg transition-colors whitespace-nowrap"
-                aria-label="Accetta i cookie"
+                aria-label={strings.components.cookieBanner.acceptAriaLabel}
               >
-                Accetta
+                {strings.components.cookieBanner.accept}
               </button>
             </div>
           </div>

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import type { TravelStats } from "@/lib/travels";
 import { withBasePath } from "@/lib/paths";
+import { strings } from "@/config/strings";
 
 interface TravelStatsProps {
   stats: TravelStats;
@@ -10,23 +11,23 @@ export function TravelStats({ stats }: TravelStatsProps) {
   const statsItems = [
     {
       value: stats.countriesVisited,
-      label: "Paesi visitati",
+      label: strings.components.travelStats.countriesVisited,
       icon: withBasePath("/images/icons/countries.png"),
     },
     {
       value: stats.continentsVisited,
-      label: "Continenti visitati",
+      label: strings.components.travelStats.continentsVisited,
       icon: withBasePath("/images/icons/continents.png"),
     },
     {
       value: stats.kilometersWalked,
-      label: "Km percorsi",
+      label: strings.components.travelStats.kilometersWalked,
       suffix: " km",
       icon: withBasePath("/images/icons/kilometers.png"),
     },
     {
       value: stats.brokenShoes,
-      label: "Paia di scarpe rotte",
+      label: strings.components.travelStats.brokenShoes,
       icon: withBasePath("/images/icons/shoes.png"),
     },
   ];

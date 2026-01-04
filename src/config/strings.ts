@@ -41,14 +41,43 @@ export const strings = {
     tagFilter: {
       allTravels: "Tutti i viaggi",
     },
+    cookieBanner: {
+      title: "Gestione dei Cookie",
+      description:
+        "Questo sito utilizza cookie tecnici per il funzionamento delle mappe e delle immagini. Continuando a navigare, accetti l'utilizzo di questi cookie.",
+      moreInfo: "Maggiori informazioni",
+      reject: "Rifiuta",
+      accept: "Accetta",
+      rejectAriaLabel: "Rifiuta i cookie",
+      acceptAriaLabel: "Accetta i cookie",
+    },
+    travelStats: {
+      countriesVisited: "Paesi visitati",
+      continentsVisited: "Continenti visitati",
+      kilometersWalked: "Km percorsi",
+      brokenShoes: "Paia di scarpe rotte",
+    },
+    travelTimeline: {
+      stagesLabel: "Tappe del cammino",
+    },
+    travelNavigationCard: {
+      comingSoon: "Arriverà presto.",
+    },
     travelGallery: {
       fullGallery: "Galleria completa",
       close: "Chiudi",
+      photoGallery: "Galleria fotografica",
+      seeAll: "Vedi tutte",
+      previousPhoto: "Foto precedente",
+      nextPhoto: "Foto successiva",
+      scrollThumbnailsBack: "Scroll thumbnails indietro",
+      scrollThumbnailsForward: "Scroll thumbnails avanti",
     },
     masonryGallery: {
       close: "Chiudi",
       previousPhoto: "Foto precedente",
       nextPhoto: "Foto successiva",
+      noPhotosAvailable: "Nessuna foto disponibile",
     },
     sectionHeader: {
       latestPublications: "Ultime pubblicazioni",
