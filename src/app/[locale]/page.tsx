@@ -51,10 +51,10 @@ export default async function HomePage({ params }: HomePageProps) {
 
   return (
     <div>
-      <HeroSection />
+      <HeroSection locale={locale} />
 
       <div className="mt-24">
-        <AboutPreviewSection />
+        <AboutPreviewSection locale={locale} />
       </div>
 
       <div className="mt-24">
@@ -62,11 +62,11 @@ export default async function HomePage({ params }: HomePageProps) {
       </div>
 
       <div className="mt-24">
-        <TravelsHighlightSection travels={highlights} />
+        <TravelsHighlightSection travels={highlights} locale={locale} />
       </div>
       
       <div className="mt-24">
-        <GalleryPreviewSection photos={galleryPreview} />
+        <GalleryPreviewSection photos={galleryPreview} locale={locale} />
       </div>
 
       <div className="mt-24">

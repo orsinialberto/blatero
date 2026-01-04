@@ -1,7 +1,8 @@
 import Image from "next/image";
 import { SectionHeader } from "@/components/SectionHeader";
 import { optimizeCloudinaryUrl } from "@/lib/imageOptimization";
-import { strings } from "@/config/strings";
+import { getTranslations } from "@/i18n";
+import type { SupportedLocale } from "@/config/locales";
 import { LocalizedLink } from "../LocalizedLink";
 
 interface GalleryPhoto {
@@ -12,9 +13,12 @@ interface GalleryPhoto {
 
 interface GalleryPreviewSectionProps {
   photos: GalleryPhoto[];
+  locale: SupportedLocale;
 }
 
-export function GalleryPreviewSection({ photos }: GalleryPreviewSectionProps) {
+export function GalleryPreviewSection({ photos, locale }: GalleryPreviewSectionProps) {
+  const t = getTranslations(locale);
+
   if (photos.length === 0) {
     return null;
   }
@@ -27,7 +31,7 @@ export function GalleryPreviewSection({ photos }: GalleryPreviewSectionProps) {
       <div className="absolute inset-0">
         <Image
           src="/images/gallery.JPG"
-          alt="Montagne panorama"
+          alt={t.components.galleryPreviewSection.imageAlt}
           fill
           className="object-cover opacity-90"
           sizes="100vw"
@@ -39,8 +43,8 @@ export function GalleryPreviewSection({ photos }: GalleryPreviewSectionProps) {
       {/* Content */}
       <div className="relative space-y-8 mx-auto px-4 lg:px-24">
         <SectionHeader
-          label={strings.components.sectionHeader.photoGallery}
-          linkText={strings.components.sectionHeader.seeAllPhotos}
+          label={t.components.sectionHeader.photoGallery}
+          linkText={t.components.sectionHeader.seeAllPhotos}
           linkHref="/galleria"
           dark={false}
         />

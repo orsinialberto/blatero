@@ -14,6 +14,11 @@ export interface TranslationMessages {
     siteName: string;
     copyright: string;
   };
+  metadata: {
+    title: string;
+    description: string;
+    siteUrl: string;
+  };
   navigation: {
     menu: string;
     close: string;
@@ -83,11 +88,20 @@ export interface TranslationMessages {
       photoGallery: string;
       seeAllPhotos: string;
     };
+    heroSection: {
+      title: string;
+      subtitle: string;
+      imageAlt: string;
+    };
     aboutPreview: {
       title: string;
       description1: string;
       description2: string;
       aboutLink: string;
+      imageAlt: string;
+    };
+    galleryPreviewSection: {
+      imageAlt: string;
     };
     languageSwitcher: {
       switchTo: string;

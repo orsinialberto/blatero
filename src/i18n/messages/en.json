@@ -77,11 +77,20 @@
       "photoGallery": "Photo gallery",
       "seeAllPhotos": "See all photos"
     },
+    "galleryPreviewSection": {
+      "imageAlt": "Mountain panorama"
+    },
+    "heroSection": {
+      "title": "That urge to leave that never fades",
+      "subtitle": "To leave, discover and tell: the journeys that make me feel good.",
+      "imageAlt": "My travels"
+    },
     "aboutPreview": {
       "title": "I pack my backpack, follow the road and go...",
       "description1": "Hi, I'm Alberto, and for a few years now I've discovered that my happiness weighs more or less like a backpack. I walk, travel by motorcycle, explore when I can and how I can.",
       "description2": "I write this blog to capture a bit of that freedom that travel gives, to remember what I've seen and share what has stayed with me.",
-      "aboutLink": "About me"
+      "aboutLink": "About me",
+      "imageAlt": "Alberto on motorcycle"
     },
     "languageSwitcher": {
       "switchTo": "Switch language",

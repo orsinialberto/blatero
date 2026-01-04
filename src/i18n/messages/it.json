@@ -77,11 +77,20 @@
       "photoGallery": "Galleria fotografica",
       "seeAllPhotos": "Vedi tutte le foto"
     },
+    "galleryPreviewSection": {
+      "imageAlt": "Montagne panorama"
+    },
+    "heroSection": {
+      "title": "Quella voglia di partire che non passa mai",
+      "subtitle": "Partire, scoprire e raccontare: i viaggi che mi fanno stare bene.",
+      "imageAlt": "I miei viaggi"
+    },
     "aboutPreview": {
       "title": "Metto lo zaino, seguo la strada e via...",
       "description1": "Ciao sono Alberto, e da qualche anno ho scoperto che la mia felicità pesa più o meno quanto uno zaino. Cammino, viaggio in moto, esploro quando posso e come posso.",
       "description2": "Scrivo questo blog per fermare un po' di quella libertà che il viaggio regala, per ricordarmi ciò che ho visto e condividere ciò che mi è rimasto dentro.",
-      "aboutLink": "Chi sono"
+      "aboutLink": "Chi sono",
+      "imageAlt": "Alberto in moto"
     },
     "languageSwitcher": {
       "switchTo": "Cambia lingua",

@@ -1,13 +1,21 @@
 import Image from "next/image";
 import { withBasePath } from "@/lib/paths";
+import { getTranslations } from "@/i18n";
+import type { SupportedLocale } from "@/config/locales";
 
-export function HeroSection() {
+interface HeroSectionProps {
+  locale: SupportedLocale;
+}
+
+export function HeroSection({ locale }: HeroSectionProps) {
+  const t = getTranslations(locale);
+
   return (
     <section className="relative -mt-[73px] h-[calc(110vh+73px)] min-h-[700px]">
       <div className="relative h-full w-full">
         <Image
           src={withBasePath("/images/home-hero.jpg")}
-          alt="I miei viaggi"
+          alt={t.components.heroSection.imageAlt}
           fill
           priority
           sizes="100vw"
@@ -19,10 +27,10 @@ export function HeroSection() {
         <div className="w-full px-4 lg:px-24">
           <div className="mx-auto max-w-3xl space-y-8 text-center text-white/90 animate-in fade-in duration-1000">
             <h1 className="font-comforter text-6xl font-normal leading-[1.1] text-white md:text-7xl lg:text-8xl">
-              Quella voglia di partire che non passa mai
+              {t.components.heroSection.title}
             </h1>
             <p className="font-klee text-xl leading-relaxed text-white/90 md:text-2xl">
-              Partire, scoprire e raccontare: i viaggi che mi fanno stare bene.
+              {t.components.heroSection.subtitle}
             </p>
           </div>
         </div>

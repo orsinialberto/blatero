@@ -1,20 +1,24 @@
 import { TravelCard } from "@/components/TravelCard";
 import { SectionHeader } from "@/components/SectionHeader";
 import type { Travel } from "@/lib/travels";
-import { strings } from "@/config/strings";
+import { getTranslations } from "@/i18n";
+import type { SupportedLocale } from "@/config/locales";
 
 interface TravelsHighlightSectionProps {
   travels: Travel[];
+  locale: SupportedLocale;
 }
 
-export function TravelsHighlightSection({ travels }: TravelsHighlightSectionProps) {
+export function TravelsHighlightSection({ travels, locale }: TravelsHighlightSectionProps) {
+  const t = getTranslations(locale);
+
   return (
     <section className="relative">
       <div className="px-4 lg:px-24">
         <div className="space-y-6">
           <SectionHeader
-            label={strings.components.sectionHeader.latestPublications}
-            linkText={strings.components.sectionHeader.seeAll}
+            label={t.components.sectionHeader.latestPublications}
+            linkText={t.components.sectionHeader.seeAll}
             linkHref="/viaggi"
           />
 
