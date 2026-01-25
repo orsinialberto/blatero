@@ -213,4 +213,61 @@ Facciamo le foto di rito davanti alla cattedrale. Ci sdraiamo per terra sull’a
 Alla fine un sorriso mi si disegna sul volto.  
 E ancora oggi, se ripenso a quel momento, è lo stesso sorriso che ritorna.
 
-# In arrivo la seconda parte
+![Arrivo a Santiago](https://res.cloudinary.com/dx6hrvg6l/image/upload/v1764883560/santiago-01_muxnwb.jpg)
+
+## Seconda parte: Cammino di Finisterre
+
+Salutati gli amici spagnoli è tempo di ripartire. Il mio viaggio non è ancora concluso: la destinazione finale è il faro di Finisterre, la fine del mondo.
+
+## Prima tappa: Santiago de Compostela - Negreira
+
+Mi sveglio che è ancora buio. Santiago mi appare quieta, lontanissima dal caos che la riempie durante il giorno. Cammino in silenzio ed esco dalla città, ritrovandomi quasi subito in un bosco fitto e completamente buio.
+Il sole non è ancora sorto e la luce della luna non riesce a filtrare tra i rami degli alberi. Accendo la torcia del mio iPhone per vedere dove metto i piedi ed evitare di inciampare tra le radici.
+
+Dopo qualche chilometro il sole finalmente sorge. Esco dal bosco e mi fermo al primo bar che incontro per fare colazione. Inizio la giornata con pan y jamón y tomate, una tradizione ormai consolidata nei cammini che ho fatto in Spagna.
+Il panino mi ridà energia, le gambe rispondono bene e riprendo a camminare a ritmo spedito.
+
+Arrivo al Ponte Sarela, un antico ponte in pietra, storico e simbolico per il Cammino di Finisterre. Superato il ponte inizia un saliscendi faticoso, a cui le mie gambe non erano più abituate. Dopo i primi giorni più pianeggianti questo tratto si fa sentire, anche se a compensare ci pensano panorami davvero belli.
+
+Arrivato a Negreira mi fermo in un bar locale per pranzo: pimientos de padrón e croquetas mi aiutano a recuperare un po’ di energie.
+
+Trovato l’albergue per la notte, scopro che nel letto accanto al mio dorme un ragazzo tedesco. Mi racconta la sua esperienza: ha percorso più di 1000 km, partendo dal confine tra Spagna e Francia e attraversando tutto il nord della Spagna fino a Santiago. Rimango a bocca aperta ad ascoltarlo.
+
+Poco dopo si uniscono a noi due ragazzi di Trento, anche loro arrivati dal Cammino Francese, fatto in più tappe.
+La sera ci ritroviamo tutti assieme nella cucina dell’albergue: siamo un gruppo di pellegrini che si conosce da poche ore. Un signore italiano cucina la pasta, mentre il ragazzo tedesco prepara pollo al curry.
+
+Mangiamo tutti insieme. L’atmosfera è di quelle belle: persone serene, sorridenti, felici. Ognuno ha camminato strade diverse e vissuto esperienze differenti, ma lo stato d’animo è lo stesso. Diversi, eppure incredibilmente uniti.
+
+## Seconda tappa: Negreira - Olveiroa
+
+Anche il secondo giorno parto presto. A Negreira i lampioni sono ancora accesi. Con me camminano Clarissa e Alessandro, una coppia di ragazzi di Trento, e il signore che aveva cucinato la pasta la sera prima.
+
+Il sole sorge lentamente da dietro una collina. L’ombra del pellegrino si allunga sull’asfalto e sui muri delle case. Il paesaggio è spettacolare: attraversiamo campi di mais e incontriamo molti altri pellegrini lungo il sentiero.
+
+Dopo qualche chilometro, sdraiato su un’amaca, ritrovo il ragazzo austriaco dell’albergue. Ci salutiamo, scambiamo quattro parole, scherziamo, ridiamo… poi ognuno riprende il proprio passo.
+
+La giornata scorre così, senza fretta, fino ad arrivare a Olveiroa. La sera mangiamo ancora tutti insieme e poi a dormire, stanchi ma sereni.
+
+## Terza tappa: Olveiroa - Finisterre
+
+L’ultima tappa è anche la più suggestiva. Decidiamo di andare fino a Finisterre insieme. Sono ancora in compagnia dei miei nuovi amici italiani.
+
+Uno dei momenti più scenografici è l’uscita dal bosco: all’improvviso il mare appare all’orizzonte. Capisco che siamo vicini.
+
+Prima di arrivare alla meta, però, ci fermiamo su una spiaggia. Era il desiderio di tutti fare un bagno, e così facciamo. L’acqua è fredda, ma rigenera i piedi doloranti ed è una vera goduria.
+
+Dopo il bagno ci fermiamo in un ristorante a mangiare pesce fresco. Anche qui mi concedo una bella mangiata di frutti di mare.
+Lo svago è finito, si riprende a camminare. Arriviamo finalmente a Finisterre, visitiamo il paese e raggiungiamo il faro. Davanti a me c’è la colonnina finale: km 0.
+Sono arrivato. Finalmente.
+Mi faccio scattare una foto che racconta tutta la felicità che ho addosso.
+
+![km 0](https://res.cloudinary.com/dx6hrvg6l/image/upload/v1764883558/finisterre-02_aua5pr.jpg)
+
+La sera decido di tornare di nuovo al faro. Qui assisto a un momento davvero magico: il tramonto.
+Il sole scende all’orizzonte, il cielo si tinge di arancione, l’aria è fresca e l’animo è in pace. Quando il sole scompare del tutto, le persone iniziano ad applaudire. Un applauso spontaneo, istintivo, come per ringraziare lo spettacolo a cui abbiamo appena assistito.
+
+La giornata è finita.
+Il sole è tramontato.
+E il mio cammino, finalmente, è completo.
+
+![tramonto](https://res.cloudinary.com/dx6hrvg6l/image/upload/v1764883559/finisterre-04_zl3cdc.jpg)

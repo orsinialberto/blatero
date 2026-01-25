@@ -213,5 +213,60 @@ We take the ritual photos in front of the cathedral. We lie down on the asphalt,
 In the end a smile appears on my face.  
 And even today, if I think back to that moment, it's the same smile that returns.
 
-# Second part coming soon
+![Arrival at Santiago](https://res.cloudinary.com/dx6hrvg6l/image/upload/v1764883560/santiago-01_muxnwb.jpg)
 
+## Second Part: Finisterre Way
+
+After saying goodbye to my Spanish friends it's time to set off again. My journey is not yet over: the final destination is the Finisterre lighthouse, the end of the world.
+
+## First Stage: Santiago de Compostela - Negreira
+
+I wake up when it's still dark. Santiago appears quiet to me, a world away from the chaos that fills it during the day. I walk in silence and leave the city, soon finding myself in a dense forest that's completely dark.
+The sun hasn't risen yet and the moonlight doesn't manage to filter through the tree branches. I turn on my iPhone torch to see where I'm putting my feet and avoid tripping over the roots.
+
+After a few kilometers the sun finally rises. I leave the woods and stop at the first bar I find for breakfast. I start the day with pan con jamón y tomate, a tradition now well established on the ways I've walked in Spain.
+The sandwich gives me back my energy, my legs respond well and I set off again at a brisk pace.
+
+I reach Ponte Sarela, an ancient stone bridge, historic and symbolic for the Finisterre Way. After crossing the bridge a tiring up-and-down section begins, which my legs were no longer used to. After the flatter first days this stretch makes itself felt, although the truly beautiful views more than make up for it.
+
+In Negreira I stop at a local bar for lunch: pimientos de padrón and croquetas help me recover a bit of energy.
+
+Once I've found the hostel for the night, I discover that in the bed next to mine is a German guy. He tells me about his experience: he walked over 1000 km, starting from the border between Spain and France and crossing the whole of northern Spain to Santiago. I'm left open-mouthed listening to him.
+
+A little later two guys from Trento join us, also arrived from the French Way, done in several stages.
+In the evening we all get together in the hostel kitchen: we're a group of pilgrims who've known each other for a few hours. An Italian man cooks pasta, while the German guy makes chicken curry.
+We all eat together. The atmosphere is one of those good ones: serene, smiling, happy people. Everyone has walked different paths and lived different experiences, but the mood is the same. Different, yet incredibly united.
+
+## Second Stage: Negreira - Olveiroa
+
+On the second day I also leave early. In Negreira the street lamps are still on. Walking with me are Clarissa and Alessandro, a couple from Trento, and the man who had cooked the pasta the night before.
+
+The sun rises slowly from behind a hill. The pilgrim's shadow stretches on the asphalt and on the walls of the houses. The landscape is spectacular: we cross cornfields and meet many other pilgrims along the path.
+
+After a few kilometers, lying in a hammock, I find again the Austrian guy from the hostel. We greet each other, exchange a few words, joke, laugh… then each of us resumes our own pace.
+
+The day goes by like this, without rush, until we reach Olveiroa. In the evening we all eat together again and then to bed, tired but at peace.
+
+## Third Stage: Olveiroa - Finisterre
+
+The last stage is also the most evocative. We decide to go all the way to Finisterre together. I'm still in the company of my new Italian friends.
+
+One of the most scenic moments is leaving the woods: suddenly the sea appears on the horizon. I realize we're close.
+
+Before reaching the destination, though, we stop at a beach. Everyone had wanted to go for a swim, and so we do. The water is cold, but it refreshes our aching feet and is a real treat.
+
+After the swim we stop at a restaurant for fresh fish. Here too I treat myself to a good seafood meal.
+The break is over, we start walking again. We finally reach Finisterre, visit the town and get to the lighthouse. In front of me is the final milestone: km 0.
+I've arrived. Finally.
+I have a photo taken that captures all the happiness I'm feeling.
+
+![km 0](https://res.cloudinary.com/dx6hrvg6l/image/upload/v1764883558/finisterre-02_aua5pr.jpg)
+
+In the evening I decide to go back to the lighthouse. Here I witness a truly magical moment: the sunset.
+The sun goes down on the horizon, the sky turns orange, the air is cool and my spirit is at peace. When the sun disappears completely, people start to applaud. A spontaneous, instinctive applause, as if to thank the spectacle we've just witnessed.
+
+The day is over.
+The sun has set.
+And my journey, finally, is complete.
+
+![Sunset](https://res.cloudinary.com/dx6hrvg6l/image/upload/v1764883559/finisterre-04_zl3cdc.jpg)
