@@ -204,7 +204,7 @@ Il contenuto del viaggio scritto in Markdown...
 #### Palette Colori (Tailwind)
 ```typescript
 brand: {
-  background: "#f7f7f5",    // Sfondo principale
+  background: "#ffffff",    // Sfondo principale
   primary: "#0f172a",       // Testo principale
   secondary: "#334155",     // Testo secondario
   accent: "#14b8a6",        // Accenti (teal)

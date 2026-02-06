@@ -11,13 +11,13 @@
 
 :root {
   color-scheme: light;
-  background-color: #f7f7f5;
+  background-color: #ffffff;
 }
 
 body {
   min-height: 100vh;
   font-family: var(--font-geist-sans), "Inter", system-ui, sans-serif;
-  background: #f7f7f5;
+  background: #ffffff;
   color: #0f172a;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
